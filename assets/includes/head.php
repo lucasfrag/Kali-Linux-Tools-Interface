@@ -23,3 +23,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/timeline.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
+
+<?php
+    include ("assets/includes/connections.php"); 
+    $con = getConnectionDB() or die ("Could not connect to database.");
+    $ssh = getConnectionSSH() or die ("Could not connect to Kali Linux.");
+?>

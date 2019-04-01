@@ -2,9 +2,6 @@
 <html>
   <?php 
   	include("assets/includes/head.php"); 
-  	// Conexão com banco de dados
-    include ("assets/includes/database.php"); 
-    $con = getConnection() or die ("Não é possível conectar-se ao servidor.");
   ?>
 <body>
 	<?php
