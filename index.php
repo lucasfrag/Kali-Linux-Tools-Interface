@@ -18,21 +18,16 @@
         <div class="col">
           	<div class="card shadow">
 	            <div class="card-header bg-transparent">
-	              <h2 class="mb-0">Kali Linux Tools Listing</h2>
+	              <h2 class="mb-0">Dashboard</h2>
 	            </div>
             	
             	<div class="card-body">
             		<div class="row icon-examples">
 						<?php
-							$sql = $con->prepare("SELECT nome, logo, categoria, url FROM tools ORDER BY nome;");
-							$sql->execute();
-							$resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
-							// FOREACH BEGINS
-							foreach ($resultados as $resultado) {
-								$nome = $resultado['nome'];
-								$logo = $resultado['logo'];
-								$categoria = $resultado['categoria'];
-								$url = $resultado['url'];
+							$nome = "teste";
+							$logo = "teste";
+							$categoria = "teste";
+							$url = "teste";
 						?>
 
 						<div class="col-sm-12 col-md-6 col-lg-4">
@@ -51,11 +46,6 @@
 								</div>
 							</a>
 						</div>
-				
-						<?php
-						// FOREACH ENDS
-								}
-						?>
 					</div>
 				</div>
 			</div>

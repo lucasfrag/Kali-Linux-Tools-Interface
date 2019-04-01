@@ -36,16 +36,22 @@
                 <div class="col">
                   <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                     <div>
-                      <span class="heading">22</span>
-                      <span class="description">Friends</span>
+                      <a target="_blank" href="https://tools.kali.org/information-gathering/nmap">
+                        <span class="heading"><i class="ni ni-single-copy-04 text-default"></i></span>
+                        <span class="description text-primary">Description</span>
+                      </a>
                     </div>
                     <div>
-                      <span class="heading">10</span>
-                      <span class="description">Photos</span>
+                      <a target="_blank" href="https://insecure.org/">
+                        <span class="heading"><i class="ni ni-world-2 text-danger"></i></span>
+                        <span class="description text-primary">Site</span>
+                      </a>
                     </div>
                     <div>
-                      <span class="heading">89</span>
-                      <span class="description">Comments</span>
+                      
+                        <span class="heading"><i class="ni ni-bold-right text-green"></i></span>
+                        <span class="description">GitHub</span>
+                      
                     </div>
                   </div>
                 </div>
