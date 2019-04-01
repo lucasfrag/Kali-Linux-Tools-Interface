@@ -24,10 +24,16 @@
             	<div class="card-body">
             		<div class="row icon-examples">
 						<?php
-							$nome = "teste";
-							$logo = "teste";
-							$categoria = "teste";
-							$url = "teste";
+							include('./assets/libraries/phpseclib/Net/SSH2.php');
+							$server = '192.168.0.15';
+							$user = "root";
+							$password = "toor";
+
+							$ssh = new Net_SSH2($server);
+
+							if (!$ssh->login('username', 'password')) {
+							    exit('Login Failed');
+							}
 						?>
 
 						<div class="col-sm-12 col-md-6 col-lg-4">
