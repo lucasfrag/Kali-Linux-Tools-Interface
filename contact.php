@@ -19,34 +19,7 @@
 	            </div>
             	
             	<div class="card-body">
-            		<ul class="timeline">
-							<li class="timeline-item">
-								<div class="timeline-badge" style="background-color: #1ABB9C;"><i class="glyphicon glyphicon-comment"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-											
-
-									</div>
-									<div class="timeline-body">
-										<p>
-											<br>
-											Te dou boas-vindas ao Goulmi! 
-											
-											<br><br>
-											Eu sou o Jeferson, responsável por esta etapa da sua solicitação. É exatamente assim que o seu cliente começará a receber todas as atualizações de status. De forma automática, fácil e super amigável!<br><br> Caso você tenha gostado ou queira interagir um pouco mais comigo, clique no botão “Responder” aqui abaixo. Até logo!
-
-											<div class="text-right">
-												<br>
-												<button class="btn btn-dark" onclick="startChat();" ><span class="icon-reply"></span> Reply</button>
-											</div>
-										</p>
-
-									</div>
-								</div>
-							</li>
-							<li id="item-1" class="timeline-inverted"></li>
-							<li id="item-2" class="timeline-item"></li>
-						</ul>
+            		<?php include("timeline.php"); ?>
 				</div>
 			</div>
 

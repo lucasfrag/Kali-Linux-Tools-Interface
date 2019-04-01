@@ -25,7 +25,8 @@
 </head>
 
 <?php
-    include ("assets/includes/connections.php"); 
+    include ("assets/includes/functions.php"); 
+    
     $con = getConnectionDB() or die ("Could not connect to database.");
     $ssh = getConnectionSSH() or die ("Could not connect to Kali Linux.");
 ?>

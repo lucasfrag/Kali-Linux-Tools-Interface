@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <?php include("assets/includes/head.php"); ?>
-<body>
 
 <div class="container">
     <div class="page-header">
@@ -101,5 +97,3 @@
     </ul>
 </div>
 
-</body>
-</html>
