@@ -104,14 +104,14 @@
     </div>
   </div>
   <br>
-
-  <div class="collapse terminal" id="terminal">    
+  <div class="collapse terminal" id="terminal">
     <div class="container-fluid">
         <div class="row">
           <div class="col-xl-12 order-xl-2 mb-5 mb-xl-0">
-            <div class="card">
+            <div class="card text-white bg-dark">
               <div class="card-body">
-                    <h2 class="card-title">Terminal</h2>
+                    <h2 class="card-title text-white">Terminal</h2>
+                    <p class="card-text" id="terminal-data"></p>
               </div>
             </div>
           </div>
@@ -124,6 +124,16 @@
         $(".btn-default").click(function()  {
           $(".options").collapse('hide');
           $(".terminal").collapse('show');
+        });
+
+        document.getElementById("terminal-data").innerHTML = "Loading...";
+
+        $.post("run.php", {
+          "command": "ping 8.8.8.8"
+        }).done(function (data) {
+          document.getElementById("terminal-data").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
+        }).fail(function (error) {
+            document.getElementById("terminal-data").innerHTML = error;
         });
     }
   </script>

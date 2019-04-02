@@ -18,15 +18,23 @@
 		$ssh = new Net_SSH2($server);
 
 		if (!$ssh->login($user, $password)) {
-		    exit('Login Failed');
+			echo 
+				"<div class='alert alert-danger alert-dismissible fade show' role='alert' style='position: fixed; bottom: 0; right: 0; width: 50%;'>
+ 			   		<span class='alert-inner--icon'><i class='ni ni-fat-remove'></i></span>
+    				<span class='alert-inner--text'><strong>Connection to operating system failed!</strong></span>
+    				<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        				<span aria-hidden='true'>&times;</span>
+    				</button>
+				</div>";
+		} else {
+			echo
+				"<div class='alert alert-success alert-dismissible fade show' role='alert' style='position: fixed; bottom: 0; right: 0; width: 50%;'>
+ 			   		<span class='alert-inner--icon'><i class='ni ni-like-2'></i></span>
+    				<span class='alert-inner--text'><strong>Connection to operating system failed!</strong></span>
+    				<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        				<span aria-hidden='true'>&times;</span>
+    				</button>
+				</div>";			
 		}
-		return $ssh;
-	}
-
-	// SSH Functions
-	function packet_handler($str) {
-    	echo $str;
-    	flush();
-    	ob_flush();
 	}
 ?>
