@@ -19,14 +19,12 @@
 	            </div>
             	
             	<div class="card-body">
-            		<div class="row icon-examples">
-						<div class="col-sm-12 col-md-6 col-lg-4">
 							<?php
+								// $ssh = getConnectionSSH();
 								//echo $ssh->exec('');
-								//$ssh->exec('ping 127.0.0.1', 'packet_handler');
+								
 							?>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 	<?php

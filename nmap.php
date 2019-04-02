@@ -5,7 +5,8 @@
   ?>
 <body>
 	<?php
-		include("assets/includes/header.php")
+		include("assets/includes/header.php");
+    $online = false;
 	?>
 
 	<!-- Page content -->
@@ -61,6 +62,7 @@
                   <i class="ni education_hat mr-2"></i>Information Gathering, Vulnerability Analysis
                 </div>
                 <hr class="my-4" />
+                <form>
                 <div class="col-sm-12 offset-md-3 col-md-6">
                 		<p>Digite o endereço do alvo: </p>
 
@@ -69,15 +71,15 @@
 				      	</div>
                 </div>
                 
-                <button class="btn btn-success" data-toggle="collapse" data-target="#options"> + Options</button>
-                <button class="btn btn-default"><i class="ni ni-bold-right"></i> Execute</button>
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#options"> + Options</button>
+                <button class="btn btn-default" type="button" onclick="execute();"><i class="ni ni-bold-right"></i> Execute</button>
                 <br><br>
 
-                <div class="collapse" id="options">
-				  <div class="card card-body">
-				  	<h6 class="heading-small text-muted mb-4">User information</h6>
-				  	<div class="pl-lg-4">
-					   <div class="row">
+                <div class="collapse options" id="options">
+        				  <div class="card card-body">
+        				  	<h6 class="heading-small text-muted mb-4">User information</h6>
+        				  	<div class="pl-lg-4">
+        					   <div class="row">
 		                    <div class="col-lg-3">
 		                      <div class="form-group">
 		                        <label class="form-control-label" for="input-username">Username</label>
@@ -92,13 +94,39 @@
 		                    </div>
 	                	</div>
                 	</div>
-
+                </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <br>
 
+  <div class="collapse terminal" id="terminal">    
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-12 order-xl-2 mb-5 mb-xl-0">
+            <div class="card">
+              <div class="card-body">
+                    <h2 class="card-title">Terminal</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <script type="text/javascript">
+    function execute() {
+        $(".btn-default").click(function()  {
+          $(".options").collapse('hide');
+          $(".terminal").collapse('show');
+        });
+    }
+  </script>
 
 	<?php
 		include("assets/includes/footer.php")

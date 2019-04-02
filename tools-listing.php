@@ -21,6 +21,7 @@
             	<div class="card-body">
             		<div class="row icon-examples">
 						<?php
+							$con = getConnectionDB() or die ("Could not connect to database.");
 							$sql = $con->prepare("SELECT nome, logo, categoria, url FROM tools ORDER BY nome;");
 							$sql->execute();
 							$resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
