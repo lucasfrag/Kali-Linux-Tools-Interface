@@ -6,7 +6,6 @@
 <body>
 	<?php
 		include("assets/includes/header.php");
-    $online = false;
 	?>
 
 	<!-- Page content -->
@@ -79,45 +78,44 @@
         				  <div class="card card-body">
         				  	<h6 class="heading-small text-muted mb-4">User information</h6>
         				  	<div class="pl-lg-4">
-        					   <div class="row">
-		                    <div class="col-lg-3">
-		                      <div class="form-group">
-		                        <label class="form-control-label" for="input-username">Username</label>
-		                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
-		                      </div>
-		                    </div>
-		                    <div class="col-lg-3">
-		                      <div class="form-group">
-		                        <label class="form-control-label" for="input-email">Email address</label>
-		                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
-		                      </div>
-		                    </div>
-	                	</div>
-                	</div>
+          					   <div class="row">
+  		                    <div class="col-lg-3">
+  		                      <div class="form-group">
+  		                        <label class="form-control-label" for="input-username">Username</label>
+  		                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="lucky.jesse">
+  		                      </div>
+  		                    </div>
+  		                    <div class="col-lg-3">
+  		                      <div class="form-group">
+  		                        <label class="form-control-label" for="input-email">Email address</label>
+  		                        <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com">
+  		                      </div>
+  		                     </div>
+  	                	  </div>
+                      </form>
+                  	</div>
+                  </div>
                 </div>
-                </form>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <div class="collapse terminal" id="terminal">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-12 order-xl-2 mb-5 mb-xl-0">
-            <div class="card text-white bg-dark">
-              <div class="card-body">
-                    <h2 class="card-title text-white">Terminal</h2>
-                    <p class="card-text" id="terminal-data"></p>
-              </div>
-            </div>
+
+    <div class="row mt-3">
+      <div class="col">  
+        <div class="collapse terminal" id="terminal" >
+          <div class="card card-body text-white bg-dark">
+            <h2 class="card-title text-white">Terminal</h2>
+            <p class="card-text" id="terminal-data"></p>
           </div>
         </div>
       </div>
-  </div>
+    </div>
+
+	<?php
+		include("assets/includes/footer.php")
+	?>
 
   <script type="text/javascript">
     function execute() {
@@ -137,9 +135,5 @@
         });
     }
   </script>
-
-	<?php
-		include("assets/includes/footer.php")
-	?>
 </body>
 </html>

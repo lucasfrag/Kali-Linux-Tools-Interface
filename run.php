@@ -1,13 +1,9 @@
 <?php
 	$command = $_POST['command'];
 
-
 	set_include_path('assets/libraries/phpseclib/');
 	include('Net/SSH2.php');
-
-	$server = "192.168.0.15";	// Your Kali Linux IP Address
-	$user = "synysterfury";		// User to connect
-	$password = "toor";			// Password
+	include('assets/includes/config.php');
 
 	$ssh = new Net_SSH2($server);
 
