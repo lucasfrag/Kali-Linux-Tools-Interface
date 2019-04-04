@@ -6,8 +6,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Brand -->
-    <a class="navbar-brand pt-0" href="./index.html">
-      <img src="./assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+    <a class="navbar-brand pt-0" href="index.php">
+      <img src="assets/img/logo.png" class="navbar-brand-img">
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none">
@@ -15,7 +15,7 @@
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
-              <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg">
+              <img alt="Image placeholder" src="<?php echo $avatar;?>">
             </span>
           </div>
         </a>
@@ -52,9 +52,9 @@
       <!-- Collapse header -->
       <div class="navbar-collapse-header d-md-none">
         <div class="row">
-          <div class="col-6 collapse-brand">
-            <a href="./index.html">
-              <img src="./assets/img/brand/blue.png">
+          <div class="col-6 collapse-brand align-items-center">
+            <a href="index.php">
+              <img src="assets/img/logo.png">
             </a>
           </div>
           <div class="col-6 collapse-close">
@@ -146,10 +146,10 @@
           <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
+                <img alt="Image placeholder" src="<?php echo $avatar;?>">
               </span>
               <div class="media-body ml-2 d-none d-lg-block">
-                <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                <span class="mb-0 text-sm  font-weight-bold"><?php echo $name;?> </span>
               </div>
             </div>
           </a>
@@ -185,7 +185,8 @@
   </nav>
 
   <!-- Header -->
-  <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <!-- USE THIS DIV TO CHANGE THE BACKGROUND -->
+  <div class="header pb-8 pt-5 pt-md-8" style="background-image: url(<?php echo $background; ?>); background-size: cover;">
     <div class="container-fluid">
       
     </div>
