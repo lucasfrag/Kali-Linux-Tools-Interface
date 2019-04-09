@@ -80,20 +80,31 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.php">
-            <i class="ni ni-tv-2 text-primary"></i> Dashboard
+            <i class="ni ni-tv-2 text-secundary"></i> Dashboard
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="profile.php">
+            <i class="ni ni-single-02 text-yellow"></i> My Profile
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link" href="tools-listing.php">
-            <i class="ni ni-bullet-list-67 text-blue"></i> Tools Listing
+            <i class="ni ni-bullet-list-67 text-primary"></i> Tools Listing
           </a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href="reports.php">
+            <i class="ni ni-folder-17 text-danger"></i> Reports
+          </a>
+        </li>
 
         <li class="nav-item">
           <a class="nav-link" href="contact.php">
-            <i class="ni ni-chat-round text-orange"></i> Contact
+            <i class="ni ni-chat-round text-info"></i> Contact
           </a>
         </li>
 
@@ -131,14 +142,14 @@
     <div class="container-fluid">
       <!-- Form -->
       <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-        <div class="form-group mb-0">
+      <!--  <div class="form-group mb-0">
           <div class="input-group input-group-alternative">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
             <input class="form-control" placeholder="Search" type="text">
           </div>
-        </div>
+        </div>-->
       </form>
       <!-- User -->
       <ul class="navbar-nav align-items-center d-none d-md-flex">
@@ -157,10 +168,11 @@
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Welcome!</h6>
             </div>
-            <a href="./examples/profile.html" class="dropdown-item">
+            <a href="profile.php" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
             </a>
+            <!--
             <a href="./examples/profile.html" class="dropdown-item">
               <i class="ni ni-settings-gear-65"></i>
               <span>Settings</span>
@@ -172,7 +184,7 @@
             <a href="./examples/profile.html" class="dropdown-item">
               <i class="ni ni-support-16"></i>
               <span>Support</span>
-            </a>
+            </a>-->
             <div class="dropdown-divider"></div>
             <a href="#!" class="dropdown-item">
               <i class="ni ni-user-run"></i>
