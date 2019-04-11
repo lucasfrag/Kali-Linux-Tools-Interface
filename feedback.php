@@ -15,7 +15,7 @@
         <div class="col">
           	<div class="card shadow">
 	            <div class="card-header bg-transparent">
-	              <h2 class="mb-0">Contact</h2>
+	              <h2 class="mb-0">Feedback</h2>
 	            </div>
             	
             	<div class="card-body">

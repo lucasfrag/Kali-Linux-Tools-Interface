@@ -131,7 +131,7 @@
                 <div class="collapse options" id="options">
         				  <h6 class="heading-small text-muted mb-4">Inputs</h6>
 
-      				  	<div class="col-xl-12 inline">
+      				  	<div class="col-xl-12">
                     <div class="row">
                         <?php
                           $sql2 = $con->prepare("SELECT name, example FROM commands WHERE tool=$tool AND type='input' ORDER BY name");
@@ -188,35 +188,34 @@
                 </div>
   </form>
 
-
                   <div class="collapse commands" id="commands">
                       <h5 class="heading-small mb-4">List of commands</h5>
                             <div class="table-responsive">
-                                <table class="table table-light">
-                                  <thead class="bg-danger text-white">
+                                <table class="table table-bordered">
+                                  <thead class="">
                                     <tr>
-                                      <th>Command</th>
-                                      <th>Description</th>
-                                      <th>Examples</th>
+                                      <th><h5>Description</h5></th>
+                                      <th><h5>Command</h5></th>
+                                      <th><h5>Examples</h5></th>
                                     </tr>
                                   </thead>
                                   <tbody>
 
                                     <?php
-                                      $sql = $con->prepare("SELECT command, description, examples FROM commands WHERE tool=$tool AND description IS NOT NULL");
-                                      $sql->execute();
-                                      $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                      $sql2 = $con->prepare("SELECT command, name, examples FROM commands WHERE tool=$tool ORDER BY name");
+                                      $sql2->execute();
+                                      $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
                                       // FOREACH BEGINS
-                                      foreach ($resultados as $resultado) {
-                                        $command = $resultado['command'];
-                                        $description = $resultado['description'];
-                                        $examples = $resultado['examples'];
+                                      foreach ($resultados2 as $resultado2) {
+                                        $command = $resultado2['command'];
+                                        $name = $resultado2['name'];
+                                        $examples = $resultado2['examples'];
 
                                         echo "
                                           <tr>
+                                            <td align='left'><b>$name</b></td>
                                             <td>$command</td>
-                                            <td>$description</td>
                                             <td>$examples</td>
                                           </tr>  
                                         ";

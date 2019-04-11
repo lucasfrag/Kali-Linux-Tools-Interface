@@ -27,18 +27,7 @@
             <i class="ni ni-single-02"></i>
             <span>My profile</span>
           </a>
-          <a href="./examples/profile.html" class="dropdown-item">
-            <i class="ni ni-settings-gear-65"></i>
-            <span>Settings</span>
-          </a>
-          <a href="./examples/profile.html" class="dropdown-item">
-            <i class="ni ni-calendar-grid-58"></i>
-            <span>Activity</span>
-          </a>
-          <a href="./examples/profile.html" class="dropdown-item">
-            <i class="ni ni-support-16"></i>
-            <span>Support</span>
-          </a>
+
           <div class="dropdown-divider"></div>
           <a href="#!" class="dropdown-item">
             <i class="ni ni-user-run"></i>
@@ -66,6 +55,7 @@
         </div>
       </div>
       <!-- Form -->
+      <!--
       <form class="mt-4 mb-3 d-md-none">
         <div class="input-group input-group-rounded input-group-merge">
           <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
@@ -75,7 +65,7 @@
             </div>
           </div>
         </div>
-      </form>
+      </form>-->
       <!-- Navigation -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -102,34 +92,26 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="contact.php">
-            <i class="ni ni-chat-round text-info"></i> Contact
-          </a>
-        </li>
 
       </ul>
       <!-- Divider -->
       <hr class="my-3">
+
       <!-- Heading -->
-      <h6 class="navbar-heading text-muted">Documentation</h6>
+      <h6 class="navbar-heading text-muted">THE PROJECT</h6>
       <!-- Navigation -->
       <ul class="navbar-nav mb-md-3">
         <li class="nav-item">
-          <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-            <i class="ni ni-spaceship"></i> Getting started
+          <a class="nav-link" href="https://github.com/lucasfrag/Kali-Linux-Tools-Interface" target="_blank">
+            <i class="ni ni-spaceship"></i> GitHub
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-            <i class="ni ni-palette"></i> Foundation
+          <a class="nav-link" href="feedback.php">
+            <i class="ni ni-chat-round"></i> Feedback
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-            <i class="ni ni-ui-04"></i> Components
-          </a>
-        </li>
+
       </ul>
     </div>
   </div>
