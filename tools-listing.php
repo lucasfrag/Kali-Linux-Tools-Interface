@@ -22,32 +22,43 @@
             		<div class="row icon-examples">
 						<?php
 							$con = getConnectionDB() or die ("Could not connect to database.");
-							$sql = $con->prepare("SELECT nome, logo, categoria, url FROM tools ORDER BY nome;");
+							$sql = $con->prepare("SELECT id, name, categories, released  FROM tools ORDER BY name;");
 							$sql->execute();
 							$resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
 							// FOREACH BEGINS
 							foreach ($resultados as $resultado) {
-								$nome = $resultado['nome'];
-								$logo = $resultado['logo'];
-								$categoria = $resultado['categoria'];
-								$url = $resultado['url'];
+								$id = $resultado['id'];
+								$name = $resultado['name'];
+								$categories = $resultado['categories'];
+								$released = $resultado['released'];
 						?>
 
 						<div class="col-sm-12 col-md-6 col-lg-4">
-							<a href="<?php echo $url; ?>" style="text-decoration: none;">
+							
 								<?php 
-									if(is_null($url)) {
-										echo "<div class='card zoom-effect border-primary mb-3'>";
-									} else {
-										echo "<div class='card zoom-effect border-success mb-3 text-white bg-success'>";
+									if(is_null($released)) {
+										echo "
+											<div class='card zoom-effect border-primary mb-3'>
+												<div class='card-body'>
+											    	<p>$name</p>
+											    	<p class='card-subtitle mb-2'>$categories</p>
+											  	</div>
+											</div>
+										";
+									} else  {
+										echo "
+											<a href='selected-tool.php?id=$id' style='text-decoration: none;'>
+												<div class='card zoom-effect bborder-success mb-3 text-white bg-success'>
+													<div class='card-body'>
+												    	<p>$name</p>
+												    	<p class='card-subtitle mb-2'>$categories</p>
+												  	</div>
+												</div>
+											</a>
+										";
 									}
 								?>
-								  	<div class="card-body">
-								    	<p><?php echo $nome; ?></p>
-								    	<p class="card-subtitle mb-2"><?php echo $categoria; ?></p>
-								  	</div>
-								</div>
-							</a>
+
 						</div>
 				
 						<?php
