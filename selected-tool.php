@@ -11,7 +11,7 @@
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar  FROM tools WHERE id=$tool;");
+    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd  FROM tools WHERE id=$tool;");
     $sql->execute();
     $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
     // FOREACH BEGINS
@@ -22,6 +22,7 @@
       $site = $resultado['site'];
       $github = $resultado['github'];
       $avatar = $resultado['avatar'];
+      $cmd = $resultado['cmd'];
   ?>
 
 	<!-- Page content -->
@@ -120,7 +121,7 @@
                 		<p>Enter the target's address: </p>
 
                 	 	<div class="form-group">
-				        	<input type="text" placeholder="Example: 127.0.0.1" class="form-control is-valid" />
+				        	<input id='target' type="text" placeholder="Example: 127.0.0.1" class="form-control is-valid" onchange="getTarget();" />
 				      	</div>
                 </div>
                 
@@ -134,7 +135,7 @@
       				  	<div class="col-xl-12">
                     <div class="row">
                         <?php
-                          $sql2 = $con->prepare("SELECT name, example FROM commands WHERE tool=$tool AND type='input' ORDER BY name");
+                          $sql2 = $con->prepare("SELECT name, example, id FROM commands WHERE tool=$tool AND type='input' ORDER BY name");
                           $sql2->execute();
                           $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
@@ -142,6 +143,7 @@
                           foreach ($resultados2 as $resultado2) {
                             $name = $resultado2['name'];
                             $example = $resultado2['example'];
+                            $id = $resultado2['id'];
 
                             echo "
                               <div class='col-lg-6 col-xl-3'>
@@ -160,19 +162,20 @@
                          </div>
 
                         <?php
-                          $sql2 = $con->prepare("SELECT name FROM commands WHERE tool=$tool AND type='checkbox' ORDER BY name");
+                          $sql2 = $con->prepare("SELECT name, id FROM commands WHERE tool=$tool AND type='checkbox' ORDER BY name");
                           $sql2->execute();
                           $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
                           // FOREACH BEGINS
                           foreach ($resultados2 as $resultado2) {
                             $name = $resultado2['name'];
+                            $id = $resultado2['id'];
 
                             echo "
-                            <div class='col-lg-6 col-md-12 col-xl-6'>
+                            <div class='col-lg-12 col-xl-6'>
                                 <div class='row'>
                                   <label class='custom-toggle'>
-                                      <input type='checkbox'>
+                                      <input id='$id' type='checkbox'>
                                       <span class='custom-toggle-slider rounded-circle'></span>
                                   </label>
                                   <span>&nbsp $name</span>
@@ -254,6 +257,19 @@
 	?>
 
   <script type="text/javascript">
+    var command = '<?php echo $cmd; ?>';
+    var target = '';
+    var ports = '';
+    var commands = [12, 25, 3, 1, 5];
+
+    function getTarget() {
+      target = document.getElementById('target').value;
+    }
+
+    // TO DO
+    // GET Inputs datas
+    // GET CHECKBOX IDs AND SEND TO 'COMMANDS' || CHECK WHEN IT's ON AND OFF
+
     function execute() {
         $(".btn-default").click(function()  {
           $(".options").collapse('hide');
@@ -263,7 +279,7 @@
         document.getElementById("terminal-data").innerHTML = "Loading...";
 
         $.post("run.php", {
-          "command": "ping 8.8.8.8"
+          "command" : command, "target" : target, "commands" : commands
         }).done(function (data) {
           document.getElementById("terminal-data").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
         }).fail(function (error) {

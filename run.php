@@ -1,10 +1,13 @@
 <?php
 	$command = $_POST['command'];
+	$target = $_POST['target'];
+	$commands = array($_POST['commands']);
 
 	set_include_path('assets/libraries/phpseclib/');
 	include('Net/SSH2.php');
 	include('assets/includes/config.php');
 
+/*
 	$ssh = new Net_SSH2($server);
 
 	if (!$ssh->login($user, $password)) {
@@ -25,7 +28,10 @@
 	}
 
 		echo $ssh->exec($command, 'packet_handler');
-	}
+	}*/
+
+	echo $command . ' ' . $target . ' ';
+	print_r($commands);
 ?>
 
 <script type="text/javascript">

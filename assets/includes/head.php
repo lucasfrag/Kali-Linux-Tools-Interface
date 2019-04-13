@@ -25,6 +25,6 @@
 </head>
 
 <?php
-    include ("assets/includes/functions.php");
+    //include ("assets/includes/functions.php");
     include ("assets/includes/config.php");
 ?>
