@@ -11,7 +11,7 @@
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd  FROM tools WHERE id=$tool;");
+    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd  FROM tools WHERE id=$tool LIMIT 1;");
     $sql->execute();
     $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
     // FOREACH BEGINS

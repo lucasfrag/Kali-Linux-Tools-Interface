@@ -7,7 +7,7 @@
 	include('Net/SSH2.php');
 	include('assets/includes/config.php');
 
-/*
+
 	$ssh = new Net_SSH2($server);
 
 	if (!$ssh->login($user, $password)) {
@@ -21,17 +21,17 @@
 				</div>";
 	} else {
 
+		$cmd = $command ." ". $target;
+
+		echo $ssh->exec($cmd, 'packet_handler');
+	}
+
 	function packet_handler($str) {
-		echo $str . "<br>";
+		echo '<pre style="color: white">' . $str . '</pre>';
 		flush();
 		ob_flush();
 	}
 
-		echo $ssh->exec($command, 'packet_handler');
-	}*/
-
-	echo $command . ' ' . $target . ' ';
-	print_r($commands);
 ?>
 
 <script type="text/javascript">
