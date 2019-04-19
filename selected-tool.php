@@ -11,7 +11,7 @@
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd  FROM tools WHERE id=$tool LIMIT 1;");
+    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd  FROM tools WHERE id=$tool;");
     $sql->execute();
     $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
     // FOREACH BEGINS
@@ -260,7 +260,12 @@
     var command = '<?php echo $cmd; ?>';
     var target = '';
     var ports = '';
-    var commands = [12, 25, 3, 1, 5];
+
+    // Position 0 = Command, 1 = Type, 2 = Data
+    var commands = [
+      ["-p", "input", "80"], 
+      ["-A", "checkbox", "true"]
+    ];
 
     function getTarget() {
       target = document.getElementById('target').value;

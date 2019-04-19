@@ -26,8 +26,7 @@
   </div>
 </div>
 </footer>
-</div> <!--- Main content --> 
-
+</div> 
 
 <!-- Optinal JavaScript: jQuery, Popper.js, Bootstrap JS-->
 <script src="assets/js/jquery-3.2.1.slim.min.js"></script>

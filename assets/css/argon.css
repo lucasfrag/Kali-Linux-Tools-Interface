@@ -17783,13 +17783,14 @@ a.btn-icon-only
 }
 .custom-toggle input:checked + .custom-toggle-slider
 {
-    border: 1px solid #5e72e4;
+    border: 1px solid #007bff;
+    background: #007bff;
 }
 .custom-toggle input:checked + .custom-toggle-slider:before
 {
     transform: translateX(1.625rem); 
 
-    background: #5e72e4;
+    background: #ffffff;
 }
 .custom-toggle input:disabled + .custom-toggle-slider
 {
