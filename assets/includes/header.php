@@ -87,6 +87,12 @@
         </li>
 
         <li class="nav-item">
+          <a class="nav-link" href="extras.php">
+            <i class="ni ni-diamond text-warning"></i> Extras
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link" href="reports.php">
             <i class="ni ni-folder-17 text-danger"></i> Reports
           </a>
