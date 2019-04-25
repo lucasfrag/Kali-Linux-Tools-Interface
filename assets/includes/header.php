@@ -82,6 +82,12 @@
 
         <li class="nav-item">
           <a class="nav-link" href="tools-listing.php">
+            <i class="ni ni-app text-red"></i> Debian
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="tools-listing.php">
             <i class="ni ni-bullet-list-67 text-primary"></i> Tools Listing
           </a>
         </li>
@@ -94,7 +100,7 @@
 
         <li class="nav-item">
           <a class="nav-link" href="reports.php">
-            <i class="ni ni-folder-17 text-danger"></i> Reports
+            <i class="ni ni-single-copy-04 text-purple"></i> Reports
           </a>
         </li>
 
