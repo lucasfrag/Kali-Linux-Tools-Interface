@@ -15,7 +15,7 @@
         <div class="col">
           	<div class="card shadow">
 	            <div class="card-header bg-transparent">
-	              <h2 class="mb-0">Extras</h2>
+	              <h2 class="mb-0">Profile</h2>
 	            </div>
             	
             	<div class="card-body">

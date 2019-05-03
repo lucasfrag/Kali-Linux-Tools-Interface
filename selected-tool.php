@@ -146,10 +146,10 @@
                             $id = $resultado2['id'];
 
                             echo "
-                              <div class='col-lg-6 col-xl-3'>
+                              <div class='col-md-12 col-lg-6 col-xl-4'>
                                 <div class='form-group'>
                                   <label class='form-control-label' for='input-username'>$name</label>
-                                  <input type='text' id='input-username' class='form-control form-control-alternative' placeholder='$example'>
+                                  <input type='text' id='id' class='form-control form-control-alternative' placeholder='$example' onchange>
                                 </div>
                               </div>
                             ";
@@ -162,20 +162,21 @@
                          </div>
 
                         <?php
-                          $sql2 = $con->prepare("SELECT name, id FROM commands WHERE tool=$tool AND type='checkbox' ORDER BY name");
+                          $sql2 = $con->prepare("SELECT id, name, command FROM commands WHERE tool=$tool AND type='checkbox' ORDER BY name");
                           $sql2->execute();
                           $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
                           // FOREACH BEGINS
                           foreach ($resultados2 as $resultado2) {
-                            $name = $resultado2['name'];
                             $id = $resultado2['id'];
+                            $name = $resultado2['name'];
+                            $command = $resultado2['command'];
 
                             echo "
                             <div class='col-lg-12 col-xl-6'>
                                 <div class='row'>
                                   <label class='custom-toggle'>
-                                      <input id='$id' type='checkbox'>
+                                      <input id='$id' name='$command' type='checkbox' onclick=''>
                                       <span class='custom-toggle-slider rounded-circle'></span>
                                   </label>
                                   <span>&nbsp $name</span>
@@ -258,8 +259,7 @@
 
   <script type="text/javascript">
     var command = '<?php echo $cmd; ?>';
-    var target = '';
-    var ports = '';
+
 
     // Position 0 = Command, 1 = Type, 2 = Data
     var commands = [
@@ -267,13 +267,6 @@
       ["-A", "checkbox", "true"]
     ];
 
-    function getTarget() {
-      target = document.getElementById('target').value;
-    }
-
-    // TO DO
-    // GET Inputs datas
-    // GET CHECKBOX IDs AND SEND TO 'COMMANDS' || CHECK WHEN IT's ON AND OFF
 
     function execute() {
         $(".btn-default").click(function()  {
@@ -283,8 +276,18 @@
 
         document.getElementById("terminal-data").innerHTML = "Loading...";
 
+        /* Get target */
+        var target = document.getElementById('target').value;
+
+        /* Inputs verification */
+        var arrayCheckbox = [];
+
+        /* Checkbox verification */
+        var arrayInputs = [];
+        
+
         $.post("run.php", {
-          "command" : command, "target" : target, "commands" : commands
+          "command" : command, "target" : target, "arrayCheckbox" : arrayCheckbox, "arrayInputs" : arrayInputs
         }).done(function (data) {
           document.getElementById("terminal-data").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
         }).fail(function (error) {

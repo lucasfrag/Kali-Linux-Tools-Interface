@@ -1,8 +1,5 @@
 
 <div class="container">
-    <div class="page-header">
-        <h1 id="timeline">Timeline</h1>
-    </div>
     <ul class="timeline">
         <li>
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
