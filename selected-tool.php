@@ -234,20 +234,23 @@
         /* Get target */
         var target = document.getElementById('target').value;
 
-
         /* Inputs verification */
         var arrayInputs = [];
-        var inputs, index;
-        
-        inputs = document.querySelectorAll("input[id=input-data]");
-        for (index = 0; index < inputs.length; ++index) {
+        var inputs = document.querySelectorAll("input[id=input-data]");
+        for (var index = 0; index < inputs.length; ++index) {
             if (inputs[index].value) {
-              arrayInputs = [[inputs[index].name, inputs[index].value]];
+              arrayInputs.push([inputs[index].name, inputs[index].value]);
             }
         }
         
         /* Checkbox verification */
         var arrayCheckbox = [];
+        var checkbox = document.querySelectorAll("input[id=checkbox-data]");
+        for (var index = 0; index < checkbox.length; ++index) {
+            if (checkbox[index].checked) {
+              	arrayCheckbox.push(checkbox[index].name);           
+            }
+        }
 
         $.post("run.php", {
           "command" : command, 
@@ -261,27 +264,6 @@
         });
     }
 
-    function executeTest() {
-        /* Checkbox verification */
-        var arrayCheckbox = [];
-
-
-        /* Test checkbox */
-        var checkbox, index;
-
-        checkbox = document.querySelectorAll("input[id=input-data]");
-        for (index = 0; index < checkbox.length; ++index) {
-            
-            if (checkbox[index].value) {
-              alert(checkbox[index].name + " " + checkbox[index].value);
-              //arrayCheckbox = [checkbox[index].name, checkbox[index].value];
-              alert(arrayCheckbox);
-            }
-        }
-        //alert(arrayInputs);
-        //alert(arrayCheckbox);
-        //alert(target);
-    }
   </script>
 </body>
 </html>
