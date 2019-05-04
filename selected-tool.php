@@ -126,16 +126,17 @@
                 </div>
                 
                 <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#options"> + Options</button>
-                <button class="btn btn-default" type="button" onclick="execute();"><i class="ni ni-bold-right"></i> Execute</button>
+                <button class="btn btn-default" type="button" onclick="executeTest();"><i class="ni ni-bold-right"></i> Execute</button>
                 <br><br>
 
                 <div class="collapse options" id="options">
         				  <h6 class="heading-small text-muted mb-4">Inputs</h6>
 
+                  <!-- INPUTS LIST COMMANDS -->
       				  	<div class="col-xl-12">
                     <div class="row">
                         <?php
-                          $sql2 = $con->prepare("SELECT name, example, id FROM commands WHERE tool=$tool AND type='input' ORDER BY name");
+                          $sql2 = $con->prepare("SELECT name, example, command FROM commands WHERE tool=$tool AND type='input' ORDER BY name");
                           $sql2->execute();
                           $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
 
@@ -143,13 +144,13 @@
                           foreach ($resultados2 as $resultado2) {
                             $name = $resultado2['name'];
                             $example = $resultado2['example'];
-                            $id = $resultado2['id'];
+                            $command = $resultado2['command'];
 
                             echo "
                               <div class='col-md-12 col-lg-6 col-xl-4'>
                                 <div class='form-group'>
                                   <label class='form-control-label' for='input-username'>$name</label>
-                                  <input type='text' id='id' class='form-control form-control-alternative' placeholder='$example' onchange>
+                                  <input type='text' id='input-data' name='$command' class='form-control form-control-alternative' placeholder='$example'>
                                 </div>
                               </div>
                             ";
@@ -157,6 +158,7 @@
                         ?>
 
                          
+                         <!-- CHECKBOX LIST COMMANDS -->
                          <div class="col-xl-12">
                           <h6 class="heading-small text-muted mb-4">Scripts</h6>
                          </div>
@@ -176,7 +178,7 @@
                             <div class='col-lg-12 col-xl-6'>
                                 <div class='row'>
                                   <label class='custom-toggle'>
-                                      <input id='$id' name='$command' type='checkbox' onclick=''>
+                                      <input id='checkbox' name='$command' type='checkbox' onclick=''>
                                       <span class='custom-toggle-slider rounded-circle'></span>
                                   </label>
                                   <span>&nbsp $name</span>
@@ -190,48 +192,9 @@
                       </div>
                   	</div>
                 </div>
-  </form>
+      </form>
 
-                  <div class="collapse commands" id="commands">
-                      <h5 class="heading-small mb-4">List of commands</h5>
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                  <thead class="">
-                                    <tr>
-                                      <th><h5>Description</h5></th>
-                                      <th><h5>Command</h5></th>
-                                      <th><h5>Examples</h5></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-
-                                    <?php
-                                      $sql2 = $con->prepare("SELECT command, name, examples FROM commands WHERE tool=$tool ORDER BY name");
-                                      $sql2->execute();
-                                      $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
-
-                                      // FOREACH BEGINS
-                                      foreach ($resultados2 as $resultado2) {
-                                        $command = $resultado2['command'];
-                                        $name = $resultado2['name'];
-                                        $examples = $resultado2['examples'];
-
-                                        echo "
-                                          <tr>
-                                            <td align='left'><b>$name</b></td>
-                                            <td>$command</td>
-                                            <td>$examples</td>
-                                          </tr>  
-                                        ";
-                                      }
-                                    ?>
-                                  </tbody>
-                                </table>
-                            </div>
-                        
-                      
-                  </div>
-
+      <?php include ("assets/includes/list-commands.php"); ?>
                 
             </div>
           </div>
@@ -279,12 +242,20 @@
         /* Get target */
         var target = document.getElementById('target').value;
 
-        /* Inputs verification */
-        var arrayCheckbox = [];
 
-        /* Checkbox verification */
+        /* Inputs verification */
         var arrayInputs = [];
+        var inputs, index;
         
+        inputs = document.querySelectorAll("input[id=input-data]");
+        for (index = 0; index < inputs.length; ++index) {
+            if (inputs[index].value) {
+              arrayInputs = [inputs[index].name, inputs[index].value];
+            }
+        }
+        
+        /* Checkbox verification */
+        var arrayCheckbox = [];
 
         $.post("run.php", {
           "command" : command, "target" : target, "arrayCheckbox" : arrayCheckbox, "arrayInputs" : arrayInputs
@@ -293,6 +264,34 @@
         }).fail(function (error) {
             document.getElementById("terminal-data").innerHTML = error;
         });
+    }
+
+    function executeTest() {
+        /* Get target */
+        var target = document.getElementById('target').value;
+
+        /* Checkbox verification */
+        var arrayCheckbox = [];
+
+        /* Inputs verification */
+        var arrayInputs = [];
+        
+
+        /* Test inputs */
+        var inputs, index;
+
+        inputs = document.querySelectorAll("input[id=input-data]");
+        for (index = 0; index < inputs.length; ++index) {
+            
+            if (inputs[index].value) {
+              alert(inputs[index].name + " " + inputs[index].value);
+              arrayInputs = [inputs[index].name, inputs[index].value];
+              alert(arrayInputs);
+            }
+        }
+        //alert(arrayInputs);
+        //alert(arrayCheckbox);
+        //alert(target);
     }
   </script>
 </body>
