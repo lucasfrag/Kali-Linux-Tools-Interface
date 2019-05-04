@@ -1,19 +1,14 @@
 <?php
-	$cmd = "";
-	$command = $_POST['command'];
 	$target = $_POST['target'];
-
 	$arrayInputs = $_POST['arrayInputs'];
 	$arrayCheckbox = $_POST['arrayCheckbox'];
-
-//	$commands = $_POST['commands'];
+	$cmd = ""; 
 
 	set_include_path('assets/libraries/phpseclib/');
 	include('Net/SSH2.php');
 	include('assets/includes/config.php');
 
-
-	$ssh = new Net_SSH2($server);
+	/*$ssh = new Net_SSH2($server);
 	
 	if (!$ssh->login($user, $password)) {
 			echo 
@@ -24,27 +19,22 @@
         				<span aria-hidden='true'>&times;</span>
     				</button>
 				</div>";
-	} else {
+	} else {*/
 
 		// Get all the inputs firt
 		for ($i = 0; sizeof($arrayInputs) > $i; $i++) {
-			if ($arrayInputs[$i][1] == 'input') {
-				$cmd = $cmd . " " . $arrayInputs[$i][0] . " " . $arrayInputs[$i][2];
-			} else if ($arrayInputs[$i][1] == 'checkbox') {
-				$cmd = $cmd . " " . $arrayInputs[$i][0];
-			}
+			$cmd = $cmd . " " . $arrayInputs[$i][0] . " " . $arrayInputs[$i][1];
 		}
 
-		for ($i = 0; sizeof($arrayInputs) > $i; $i++) {
+		for ($i = 0; sizeof($arrayCheckbox) > $i; $i++) {
 			$cmd = $cmd . " " . $arrayCheckbox[$i];
 		}
 
 		$run = $command . " " . $cmd . " " . $target;
-
-print_r($arrayCheckbox);
+		echo $run;		
 
 		//echo $ssh->exec($run, 'packet_handler');
-	}
+	//}
 
 	function packet_handler($str) {
 		echo '<pre style="color: white">' . $str . '</pre>';

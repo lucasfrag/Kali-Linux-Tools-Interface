@@ -126,7 +126,7 @@
                 </div>
                 
                 <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#options"> + Options</button>
-                <button class="btn btn-default" type="button" onclick="executeTest();"><i class="ni ni-bold-right"></i> Execute</button>
+                <button class="btn btn-default" type="button" onclick="execute();"><i class="ni ni-bold-right"></i> Execute</button>
                 <br><br>
 
                 <div class="collapse options" id="options">
@@ -178,7 +178,7 @@
                             <div class='col-lg-12 col-xl-6'>
                                 <div class='row'>
                                   <label class='custom-toggle'>
-                                      <input id='checkbox' name='$command' type='checkbox' onclick=''>
+                                      <input id='checkbox-data' name='$command' type='checkbox'>
                                       <span class='custom-toggle-slider rounded-circle'></span>
                                   </label>
                                   <span>&nbsp $name</span>
@@ -223,14 +223,6 @@
   <script type="text/javascript">
     var command = '<?php echo $cmd; ?>';
 
-
-    // Position 0 = Command, 1 = Type, 2 = Data
-    var commands = [
-      ["-p", "input", "80"], 
-      ["-A", "checkbox", "true"]
-    ];
-
-
     function execute() {
         $(".btn-default").click(function()  {
           $(".options").collapse('hide');
@@ -250,7 +242,7 @@
         inputs = document.querySelectorAll("input[id=input-data]");
         for (index = 0; index < inputs.length; ++index) {
             if (inputs[index].value) {
-              arrayInputs = [inputs[index].name, inputs[index].value];
+              arrayInputs = [[inputs[index].name, inputs[index].value]];
             }
         }
         
@@ -258,7 +250,10 @@
         var arrayCheckbox = [];
 
         $.post("run.php", {
-          "command" : command, "target" : target, "arrayCheckbox" : arrayCheckbox, "arrayInputs" : arrayInputs
+          "command" : command, 
+          "target" : target, 
+          "arrayCheckbox" : arrayCheckbox, 
+          "arrayInputs" : arrayInputs
         }).done(function (data) {
           document.getElementById("terminal-data").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
         }).fail(function (error) {
@@ -267,26 +262,20 @@
     }
 
     function executeTest() {
-        /* Get target */
-        var target = document.getElementById('target').value;
-
         /* Checkbox verification */
         var arrayCheckbox = [];
 
-        /* Inputs verification */
-        var arrayInputs = [];
-        
 
-        /* Test inputs */
-        var inputs, index;
+        /* Test checkbox */
+        var checkbox, index;
 
-        inputs = document.querySelectorAll("input[id=input-data]");
-        for (index = 0; index < inputs.length; ++index) {
+        checkbox = document.querySelectorAll("input[id=input-data]");
+        for (index = 0; index < checkbox.length; ++index) {
             
-            if (inputs[index].value) {
-              alert(inputs[index].name + " " + inputs[index].value);
-              arrayInputs = [inputs[index].name, inputs[index].value];
-              alert(arrayInputs);
+            if (checkbox[index].value) {
+              alert(checkbox[index].name + " " + checkbox[index].value);
+              //arrayCheckbox = [checkbox[index].name, checkbox[index].value];
+              alert(arrayCheckbox);
             }
         }
         //alert(arrayInputs);
