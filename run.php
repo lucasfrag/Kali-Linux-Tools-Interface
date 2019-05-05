@@ -1,8 +1,10 @@
 <?php
+	$command = $_POST['command'];
 	$target = $_POST['target'];
 	$arrayInputs = $_POST['arrayInputs'];
 	$arrayCheckbox = $_POST['arrayCheckbox'];
-	$cmd = ""; 
+	
+	$cmd = "";
 
 	set_include_path('assets/libraries/phpseclib/');
 	include('Net/SSH2.php');
@@ -12,9 +14,9 @@
 	
 	if (!$ssh->login($user, $password)) {
 			echo 
-				"<div class='alert alert-danger alert-dismissible fade fade.in show' role='alert' style='position: fixed; z-index: 2; bottom: 0; right: 0; width: 50%;'>
+				"<div class='alert alert-danger alert-dismissible fade fade.in show' role='alert' style='position: fixed; z-index: 2; bottom: 0; right: 0; width: 40%;'>
  			   		<span class='alert-inner--icon'><i class='ni ni-fat-remove'></i></span>
-    				<span class='alert-inner--text'><strong>Connection to operating system failed!</strong></span>
+    				<span class='alert-inner--text'><strong>Error!</strong> Connection to operating system failed!</span>
     				<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         				<span aria-hidden='true'>&times;</span>
     				</button>
@@ -30,10 +32,22 @@
 			$cmd = $cmd . " " . $arrayCheckbox[$i];
 		}
 
+		// GET FULL COMMAND TO RUN
 		$run = $command . " " . $cmd . " " . $target;
-		echo $run;		
-
+		
+		echo $run;
 		//echo $ssh->exec($run, 'packet_handler');
+
+		echo
+		"<div id='output' class='alert alert-success alert-dismissible fade show' role='alert' style='position: fixed; z-index: 2; bottom: 0; right: 0; width: 40%;'>
+		   	<span class='alert-inner--icon'><i class='ni ni-fat-checked'></i></span>
+			<span class='alert-inner--text'><strong>Success!</strong> 
+Command executed successfully.</span>
+			
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+				<span aria-hidden='true'>&times;</span>
+			</button>
+		</div>";
 	//}
 
 	function packet_handler($str) {
@@ -41,10 +55,4 @@
 		flush();
 		ob_flush();
 	}
-
-
 ?>
-
-<script type="text/javascript">
-	$(".alert").delay(10000).animate({ opacity: 1 }, 700);​
-</script>

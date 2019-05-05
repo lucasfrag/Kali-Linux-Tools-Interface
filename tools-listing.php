@@ -48,7 +48,7 @@
 									} else  {
 										echo "
 											<a href='selected-tool.php?id=$id' style='text-decoration: none;'>
-												<div class='card zoom-effect bborder-success mb-3 text-white bg-success'>
+												<div class='card zoom-effect border-success mb-3 text-white bg-success'>
 													<div class='card-body'>
 												    	<p>$name</p>
 												    	<p class='card-subtitle mb-2'>$categories</p>
