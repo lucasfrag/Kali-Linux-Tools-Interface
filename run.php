@@ -10,7 +10,7 @@
 	include('Net/SSH2.php');
 	include('assets/includes/config.php');
 
-	/*$ssh = new Net_SSH2($server);
+	$ssh = new Net_SSH2($server);
 	
 	if (!$ssh->login($user, $password)) {
 			echo 
@@ -21,7 +21,7 @@
         				<span aria-hidden='true'>&times;</span>
     				</button>
 				</div>";
-	} else {*/
+	} else {
 
 		// Get all the inputs firt
 		for ($i = 0; sizeof($arrayInputs) > $i; $i++) {
@@ -32,11 +32,10 @@
 			$cmd = $cmd . " " . $arrayCheckbox[$i];
 		}
 
-		// GET FULL COMMAND TO RUN
 		$run = $command . " " . $cmd . " " . $target;
-		
-		echo $run;
-		//echo $ssh->exec($run, 'packet_handler');
+		echo "<style='color: white'>The following command was executed: <b>" . $run . "</b>";
+		$ssh->setTimeout(0);
+		$ssh->exec("echo $password | sudo -S " . $run, 'packet_handler');
 
 		echo
 		"<div id='output' class='alert alert-success alert-dismissible fade show' role='alert' style='position: fixed; z-index: 2; bottom: 0; right: 0; width: 40%;'>
@@ -48,7 +47,7 @@ Command executed successfully.</span>
 				<span aria-hidden='true'>&times;</span>
 			</button>
 		</div>";
-	//}
+	}
 
 	function packet_handler($str) {
 		echo '<pre style="color: white">' . $str . '</pre>';
