@@ -70,13 +70,19 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.php">
-            <i class="ni ni-tv-2 text-secundary"></i> Dashboard
+            <i class="ni ni-tv-2 text-blue"></i> Dashboard
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="profile.php">
-            <i class="ni ni-single-02 text-yellow"></i> My Profile
+          <a class="nav-link" href="terminal.php">
+            <i class="ni ni-bold-right text-dark"></i> Terminal
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="tools-listing.php">
+            <i class="ni ni-bullet-list-67 text-blue"></i> Tools Listing
           </a>
         </li>
 
@@ -86,21 +92,10 @@
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="tools-listing.php">
-            <i class="ni ni-bullet-list-67 text-primary"></i> Tools Listing
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="extras.php">
-            <i class="ni ni-diamond text-warning"></i> Extras
-          </a>
-        </li>
 
         <li class="nav-item">
           <a class="nav-link" href="reports.php">
-            <i class="ni ni-single-copy-04 text-purple"></i> Reports
+            <i class="ni ni-single-copy-04 text-yellow"></i> Reports
           </a>
         </li>
 
