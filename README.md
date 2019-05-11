@@ -15,7 +15,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-- A Debian-based distribution (preferably Kali Linux)
+- A Debian-based distribution (preferably [Kali Linux](https://www.kali.org/))
 - Apache / Nginx service running
 - SSH Service running
 
@@ -23,8 +23,8 @@ To get a local copy up and running follow these simple example steps.
 ### Installation
 
 1. Extract the contents to the folder of your web server.
-2. Create a database called 'kali' in SQL and import the file.
-3. Edit the file 'assets/includes/config.php' and set yours settings.
+2. Create a database called `kali` in SQL and import the file.
+3. Edit the file `assets/includes/config.php` and set yours settings.
 4. Enjoy!
 
 
