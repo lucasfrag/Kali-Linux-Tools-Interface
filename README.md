@@ -1,7 +1,3 @@
-[![Build Status][build-shield]]()
-[![Contributors][contributors-shield]]()
-[![Downloads Stats][npm-downloads]][npm-url]
-
 <!-- LOGO -->
 <p align="center">
   <img src="assets/img/logo.png" alt="Logo" width="80" height="80">
