@@ -2,14 +2,15 @@
 <p align="center">
   <img src="assets/img/logo.png" alt="Logo" width="80" height="80">
   <h3 align="center">Kali Linux Tools Interface</h3>
-  <p align="center">A graphical interface for using the Kali Linux tools through the browser.</p>
-  <br />
-    <a href=""><strong>Explore the docs »</strong></a>
+  <p align="center">A graphical interface for using the Kali Linux tools through the browser.
     <br />
-    <br />
-    <a href="https://github.com/lucasfrag/Kali-Linux-Tools-Interface/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/lucasfrag/Kali-Linux-Tools-Interface/issues">Request Feature</a>
+      <a href=""><strong>Explore the docs »</strong></a>
+      <br />
+      <br />
+      <a href="https://github.com/lucasfrag/Kali-Linux-Tools-Interface/issues">Report Bug</a>
+      ·
+      <a href="https://github.com/lucasfrag/Kali-Linux-Tools-Interface/issues">Request Feature</a>
+  </p>
 </p>
 
 
