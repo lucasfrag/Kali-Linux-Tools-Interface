@@ -1,4 +1,7 @@
 <?php
+	// Set time limit to PHP(seconds)
+	set_time_limit(180);
+
 	$command = $_POST['command'];
 	$target = $_POST['target'];
 	$arrayInputs = $_POST['arrayInputs'];
@@ -34,7 +37,9 @@
 
 		$run = $command . " " . $cmd . " " . $target;
 		echo "<style='color: white'>The following command was executed: <b>" . $run . "</b>";
+		
 		$ssh->setTimeout(0);
+		
 		$ssh->exec("echo $password | sudo -S " . $run, 'packet_handler');
 
 		echo
