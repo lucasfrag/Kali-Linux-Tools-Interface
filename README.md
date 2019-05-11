@@ -1,3 +1,7 @@
+[![Build Status][build-shield]]()
+[![Contributors][contributors-shield]]()
+[![Downloads Stats][npm-downloads]][npm-url]
+
 <!-- LOGO -->
 <p align="center">
   <img src="assets/img/logo.png" alt="Logo" width="80" height="80">
@@ -29,7 +33,6 @@ To get a local copy up and running follow these simple example steps.
 
 
 ### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Bootstrap 4](https://getbootstrap.com)
 * [PHP 7](https://php.net)
 * [PHP Secure Communications Library](https://github.com/phpseclib/phpseclib)
