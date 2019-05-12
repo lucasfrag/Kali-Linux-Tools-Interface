@@ -11,7 +11,7 @@
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd  FROM tools WHERE id=$tool;");
+    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd, target  FROM tools WHERE id=$tool;");
     $sql->execute();
     $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
     // FOREACH BEGINS
@@ -23,6 +23,7 @@
       $github = $resultado['github'];
       $avatar = $resultado['avatar'];
       $cmd = $resultado['cmd'];
+      $target = $resultado['target'];
   ?>
 
 	<!-- Page content -->
@@ -118,6 +119,7 @@
                 <hr class="my-4" />
                 <form>
                 <div class="col-sm-12 offset-md-3 col-md-6">
+
                 		<p>Enter the target's address: </p>
 
                 	 	<div class="form-group">
@@ -231,8 +233,13 @@
 
         document.getElementById("terminal-data").innerHTML = "Loading...";
 
-        /* Get target */
+        /* GET target */
         var target = document.getElementById('target').value;
+
+        /* Verify if have target command */
+        if ('<?php echo $target; ?>') {
+        	target = '<?php echo $target; ?>' + " " + target;
+        }
 
         /* Inputs verification */
         var arrayInputs = [];
