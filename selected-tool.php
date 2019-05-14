@@ -11,7 +11,7 @@
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd, target  FROM tools WHERE id=$tool;");
+    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd, target, resume  FROM tools WHERE id=$tool;");
     $sql->execute();
     $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
     // FOREACH BEGINS
@@ -24,6 +24,7 @@
       $avatar = $resultado['avatar'];
       $cmd = $resultado['cmd'];
       $target = $resultado['target'];
+      $resume = $resultado['resume']
   ?>
 
 	<!-- Page content -->
@@ -35,13 +36,21 @@
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
-                    <img src="<?php echo $avatar; ?>" class="rounded-circle">
+                	<?php 
+                		if ($avatar) {
+                			echo "<img src='$avatar' class='rounded-circle'>";
+                		} else {
+                			echo "<img src='assets/img/kali.png' class='rounded-circle'>";
+                		}
+                	?>
+
+                    
                 </div>
               </div>
             </div>
             <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
               <div class="d-flex justify-content-between">
-                <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
+                <button data-container="body" data-toggle="popover" data-placement="right" class="btn btn-sm btn-info mr-4" data-content="<?php echo $resume; ?> ">About</button>
                 <button class="btn btn-sm btn-default float-right" data-toggle="collapse" data-target="#commands" type="button"><i class="ni ni-bold-right"> </i> Commands</button>
               </div>
             </div>
@@ -93,13 +102,13 @@
                         if(is_null($github)) {
                           echo "
                             <span class='heading'><i class='ni ni-bold-right text-green'></i></span>
-                            <span class='description'>GitHub</span>
+                            <span class='description'>Source Code</span>
                           ";
                         } else {
                           echo "
                             <a target='_blank' href='$github'>
                               <span class='heading'><i class='ni ni-bold-right text-green'></i></span>
-                              <span class='description text-primary'>GitHub</span>
+                              <span class='description text-primary'>Source Code</span>
                             </a>
                           ";
                         }
@@ -236,10 +245,13 @@
         /* GET target */
         var target = document.getElementById('target').value;
 
-        /* Verify if have target command */
-        if ('<?php echo $target; ?>') {
-        	target = '<?php echo $target; ?>' + " " + target;
+        if (target) {
+	        /* Verify if have target command */
+	        if ('<?php echo $target; ?>') {
+	        	target = '<?php echo $target; ?>' + " " + target;
+	        }        	
         }
+
 
         /* Inputs verification */
         var arrayInputs = [];
