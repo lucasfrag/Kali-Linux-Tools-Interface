@@ -11,13 +11,14 @@
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("SELECT fullname, categories, description, site, github, avatar, cmd, target, resume  FROM tools WHERE id=$tool;");
+    $sql = $con->prepare("SELECT fullname, category, category2, description, site, github, avatar, cmd, target, resume  FROM tools WHERE id=$tool;");
     $sql->execute();
     $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
     // FOREACH BEGINS
     foreach ($resultados as $resultado) {
       $fullname = $resultado['fullname'];
-      $categories = $resultado['categories'];
+      $category = $resultado['category'];
+      $category2 = $resultado['category2'];
       $description = $resultado['description'];
       $site = $resultado['site'];
       $github = $resultado['github'];
@@ -123,7 +124,14 @@
                 </h3>
                 
                 <div>
-                  <i class="ni education_hat mr-2"></i><?php echo $categories; ?>
+                  <i class="ni education_hat mr-2"></i>
+                  <?php 
+                  	echo $category;
+					if (!is_null($category2)) {
+						echo ", $category2";
+					}
+                  ?> 
+												    		                  
                 </div>
                 <hr class="my-4" />
                 <form>
