@@ -81,7 +81,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="tools-listing.php">
+          <a class="nav-link" href="tools-list.php">
             <i class="ni ni-bullet-list-67 text-blue"></i> Tools Listing
           </a>
         </li>
