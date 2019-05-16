@@ -4,7 +4,7 @@
   <h3 align="center">Kali Linux Tools Interface</h3>
   <p align="center">A graphical interface for using the Kali Linux tools through the browser.
     <br />
-      <a href="">
+      <a href="https://medium.com/@ti.lucasfraga/documenta%C3%A7%C3%A3o-do-projeto-final-de-ads-f80a1117841f">
         <strong>
           Explore the docs »
         </strong><br>
