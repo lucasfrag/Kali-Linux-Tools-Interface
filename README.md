@@ -4,7 +4,12 @@
   <h3 align="center">Kali Linux Tools Interface</h3>
   <p align="center">A graphical interface for using the Kali Linux tools through the browser.
     <br />
-      <a href=""><strong>Explore the docs »</strong></a>
+      <a href="">
+        <strong>
+          Explore the docs »
+        </strong><br>
+          (Available only in Portuguese)
+        </a>
       <br />
       <br />
       <a href="https://github.com/lucasfrag/Kali-Linux-Tools-Interface/issues">Report Bug</a>
