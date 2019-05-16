@@ -4,7 +4,12 @@
   <h3 align="center">Kali Linux Tools Interface</h3>
   <p align="center">A graphical interface for using the Kali Linux tools through the browser.
     <br />
-      <a href=""><strong>Explore the docs »</strong></a>
+      <a href="">
+        <strong>
+          Explore the docs »
+        </strong><br>
+          (Available only in Portuguese 🇧🇷)
+        </a>
       <br />
       <br />
       <a href="https://github.com/lucasfrag/Kali-Linux-Tools-Interface/issues">Report Bug</a>
@@ -26,6 +31,9 @@ To get a local copy up and running follow these simple example steps.
 - A Debian-based distribution (preferably [Kali Linux](https://www.kali.org/))
 - Apache / Nginx service running
 - SSH Service running
+- Shell In A Box (if you want to use the Terminal)
+
+To install <b>Shell In A Box</b>, use the following command: `sudo apt-get install shellinabox`
 
 
 ### Installation
