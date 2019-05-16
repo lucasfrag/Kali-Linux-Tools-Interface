@@ -21,8 +21,8 @@
 
  	// Kali Linux settings
 	$server = "localhost";	// Your Kali Linux IP Address
-	$user = "synysterfury";		// User to connect
-	$password = "Pass@word";			// Password
+	$user = "kali";		// User to connect
+	$password = "toor";			// Password
 
 
 	// Functions
