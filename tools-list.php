@@ -72,7 +72,7 @@
 									                    <div class='col-auto'>
 									                      <div class='icon icon-shape bg-yellow text-white rounded-circle shadow'";
 
-									                      echo " style='background-image: url($avatar); background-size: cover'> ";
+									                      echo " style='background-image: url($avatar); background-size: cover; background-position: center'> ";
 									                      
 									                      echo "
 									                      </div>
@@ -88,7 +88,7 @@
 									} else  {
 										echo "
 											<a href='selected-tool.php?id=$id' style='text-decoration: none;'>
-												<div class='card zoom-effect  mb-3 text-white bg-default'>
+												<div class='card zoom-effect  mb-3 text-white bg-dark'>
 													<div class='card-body'>
 
 									                  <div class='row'>
@@ -104,7 +104,7 @@
 									                    <div class='col-auto'>
 									                      <div class='icon icon-shape bg-yellow text-white rounded-circle shadow'";
 
-									                      echo " style='background-image: url($avatar); background-size: cover'> ";
+									                      echo " style='background-image: url($avatar); background-size: cover; background-position: center'> ";
 									                      
 									                      echo "
 									                      </div>
