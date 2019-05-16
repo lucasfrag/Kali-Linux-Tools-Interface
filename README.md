@@ -26,6 +26,11 @@ To get a local copy up and running follow these simple example steps.
 - A Debian-based distribution (preferably [Kali Linux](https://www.kali.org/))
 - Apache / Nginx service running
 - SSH Service running
+- Shell In A Box (if you want to use the Terminal)
+
+To install <b>Shell In A Box</b>, use the following command:
+
+```sudo apt-get install shellinabox```
 
 
 ### Installation
