@@ -17,18 +17,22 @@
 	            <div class="card-header bg-transparent">
 	              <h2 class="mb-0">Kali Linux Tools Listing</h2>
 
-	              <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapse-filter" style="float: right;">Show filters</button>
+	              <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapse-filter" style="float: right;">+ Show filters</button>
 
 	            </div>
             		
             	<div class="card-body">
-			    	
+		            <div class="collapse" id="collapse-filter">
+					  <div class="card card-body">
+					    <?php include("assets/includes/tools-categories.php"); ?>
+					  </div>
+					</div>
 
             		<div class="row icon-examples">
 			    	
 						<?php
 							$con = getConnectionDB() or die ("Could not connect to database.");
-							$sql = $con->prepare("SELECT id, name, category, category2, released, categories  FROM tools ORDER BY name;");
+							$sql = $con->prepare("SELECT id, name, category, category2, released, categories, avatar  FROM tools ORDER BY name;");
 							$sql->execute();
 							$resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
 							// FOREACH BEGINS
@@ -39,6 +43,11 @@
 								$category2 = $resultado['category2'];
 								$released = $resultado['released'];
 								$categories = $resultado['categories'];
+								$avatar = $resultado['avatar'];
+
+								if(is_null($avatar)) {
+									$avatar = 'assets/img/kali.png';
+								}
 						?>
 
 						<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 filter <?php echo $categories?>">
@@ -46,28 +55,65 @@
 								<?php 
 									if(is_null($released)) {
 										echo "
-											<div class='card zoom-effect border-primary mb-3'>
-												<div class='card-body'>
-											    	<p>$name</p>
-											    	<p class='card-subtitle mb-2'>$category"; 
-											    		if (!is_null($category2)) {
+											
+												<div class='card zoom-effect bg-white mb-3 text-white'>
+													<div class='card-body'>
+
+									                  <div class='row'>
+									                    <div class='col'>
+									                      <span class='h2 font-weight-bold mb-0'>$name</span>
+									                      <h5 class='card-title text-uppercase text-muted mb-0'>$category";
+
+									                  	    if (!is_null($category2)) {
 												    			echo ", $category2";
 												    		}
-											    	echo"</p>
-											  	</div>
-											</div>
+												    		echo "</h5>
+									                    </div>
+									                    <div class='col-auto'>
+									                      <div class='icon icon-shape bg-yellow text-white rounded-circle shadow'";
+
+									                      echo " style='background-image: url($avatar); background-size: cover'> ";
+									                      
+									                      echo "
+									                      </div>
+									                    </div>
+									                  </div>
+									                  <p class='mt-3 mb-0 text-muted text-sm'>
+									                    <span class='text-danger mr-2'>Unavailable</span>
+									                    <span class='text-nowrap'></span>
+									                  </p>
+												  	</div>
+												</div>
 										";
 									} else  {
 										echo "
 											<a href='selected-tool.php?id=$id' style='text-decoration: none;'>
-												<div class='card zoom-effect border-success mb-3 text-white bg-success'>
+												<div class='card zoom-effect  mb-3 text-white bg-default'>
 													<div class='card-body'>
-												    	<p>$name</p>
-												    	<p class='card-subtitle mb-2'>$category"; 
-												    		if (!is_null($category2)) {
+
+									                  <div class='row'>
+									                    <div class='col'>
+									                      <span class='h2 font-weight-bold mb-0 text-white'>$name</span>
+									                      <h5 class='card-title text-uppercase text-muted mb-0'>$category";
+
+									                  	    if (!is_null($category2)) {
 												    			echo ", $category2";
 												    		}
-												    	echo "</p>
+												    		echo "</h5>
+									                    </div>
+									                    <div class='col-auto'>
+									                      <div class='icon icon-shape bg-yellow text-white rounded-circle shadow'";
+
+									                      echo " style='background-image: url($avatar); background-size: cover'> ";
+									                      
+									                      echo "
+									                      </div>
+									                    </div>
+									                  </div>
+									                  <p class='mt-3 mb-0 text-muted text-sm'>
+									                    <span class='text-success mr-2'>Available</span>
+									                    <span class='text-nowrap'></span>
+									                  </p>
 												  	</div>
 												</div>
 											</a>
