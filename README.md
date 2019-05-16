@@ -8,7 +8,7 @@
         <strong>
           Explore the docs »
         </strong><br>
-          (Available only in Portuguese)
+          (Available only in Portuguese 🇧🇷)
         </a>
       <br />
       <br />
