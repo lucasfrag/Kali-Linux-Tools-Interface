@@ -114,7 +114,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="feedback.php">
+          <a class="nav-link" target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSd3GeoAqW05PDLmlyrCaeQu877HyRyzE8Sk0E5p9w2XWV1k0Q/viewform?usp=sf_link">
             <i class="ni ni-chat-round"></i> Feedback
           </a>
         </li>
