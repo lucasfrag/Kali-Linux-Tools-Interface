@@ -15,7 +15,7 @@
         <div class="col">
           	<div class="card shadow">
 	            <div class="card-header bg-transparent">
-	              <h2 class="mb-0">Kali Linux Tools Listing</h2>
+	              <h2 class="mb-0">Kali Linux Tools List</h2>
 
 	              <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapse-filter" style="float: right;">+ Show filters</button>
 
