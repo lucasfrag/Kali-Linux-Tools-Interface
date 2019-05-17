@@ -34,14 +34,13 @@ To get a local copy up and running follow these simple example steps.
 - Apache / Nginx service running
 - SSH Service running
 - Shell In A Box (if you want to use the Terminal)
-
-To install <b>Shell In A Box</b>, use the following command: `sudo apt-get install shellinabox`
+  - To install <b>Shell In A Box</b>, use the following command: `sudo apt-get install shellinabox`
 
 
 ### Installation
 
 1. Extract the contents to the folder of your web server.
-2. Create a database called `kali` in SQL and import the file.
+2. Create a database called `kali` in MySQL and import the file `assets/database.sql`.
 3. Edit the file `assets/includes/config.php` and set yours settings.
 4. Enjoy!
 
