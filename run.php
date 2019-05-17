@@ -1,6 +1,6 @@
 <?php
 	// Set time limit to PHP(seconds)
-	set_time_limit(180);
+	set_time_limit(99999);
 
 	$command = $_POST['command'];
 	$target = $_POST['target'];
