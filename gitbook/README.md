@@ -5,8 +5,8 @@ Esse documento tem como objetivo apresentar e descrever o projeto final, fornece
 ##  [Documentação e Artefatos](README.md)
 ##  [Project Model Canvas](project-model-canvas.md)
 ##  [Sprint Backlog](sprint-backlog.md)
-##  [Representação da Arquitetura](arquitetura.md)
 ##  [Mapa Mental](mapa-mental.md)
+##  [Representação da Arquitetura](arquitetura.md)
 ##  [Personas](personas.md)
 
 
