@@ -5,5 +5,5 @@ Para a modelagem do projeto <b>Kali Linux Tools Interface</b> foi utilizada a fe
 O MVP Canvas abaixo foi construido utilizando o modelo de impressão colorido disponivel no site <a href="https://www.caroli.org/o-canvas-mvp/">https://www.caroli.org/o-canvas-mvp/</a>
 
 <p align="center">
-	<img src="assets/images/mvp-canvas.png">
+	<img src="assets/images/mvp-canvas.jpg">
 </p>
