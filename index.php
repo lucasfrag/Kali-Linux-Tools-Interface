@@ -34,7 +34,7 @@
                           </div>
                           <div class="col-auto">
                             <div class="icon icon-shape bg-default text-white rounded-circle shadow">
-                              <i class="fas fa-chart-bar"></i>
+                              <i class="ni ni-bullet-list-67"></i>
                             </div>
                           </div>
                         </div>
