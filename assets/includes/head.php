@@ -20,7 +20,6 @@
     <link type="text/css" href="assets/css/argon.css?v=1.0.0" rel="stylesheet">
 
 	<!-- Custom CSS Import -->
-	<link rel="stylesheet" type="text/css" href="assets/css/timeline.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 

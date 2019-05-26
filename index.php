@@ -19,10 +19,6 @@
 	            </div>
 
 
-
-
-
-
 <div class="card-body">
 	<div class="row">
             <div class="col-xl-4 col-lg-6">
