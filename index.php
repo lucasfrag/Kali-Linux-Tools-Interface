@@ -21,43 +21,55 @@
 
 <div class="card-body">
 	<div class="row">
-            <div class="col-xl-4 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0 zoom-effect">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Available Tools</h5>
-                      <span class="h2 font-weight-bold mb-0">3</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-blue text-white rounded-circle shadow">
-                        <i class="ni ni-bullet-list-67"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a href="tools-list.php" class="btn btn-success">Show tools list</a>
-              </div>
-            </div>
 
-            <div class="col-xl-4 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0 zoom-effect">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Reports</h5>
-                      <span class="h2 font-weight-bold mb-0">0</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                        <i class="ni ni-single-copy-04"></i>
+
+
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="card card-stats">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Available Tools</h5>
+                            <span class="h3 font-weight-bold mb-0">3 TOOLS</span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape bg-default text-white rounded-circle shadow">
+                              <i class="fas fa-chart-bar"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="mt-3 mb-0 text-muted text-sm">
+                        </p>
+
+                    <a href="tools-list.php" class="btn btn-success">Show tools list</a>
                       </div>
                     </div>
                   </div>
-                </div>
-                <a href="#" class="btn btn-danger">Show Reports</a>
-              </div>
-            </div>
+
+
+
+                  <div class="col-xl-6 col-lg-6">
+                    <div class="card card-stats">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Reports</h5>
+                            <span class="h3 font-weight-bold mb-0">0 REPORTS</span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                              <i class="ni ni-single-copy-04"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="mt-3 mb-0 text-muted text-sm">
+                        </p>
+
+                    <a href="" class="btn btn-danger">Go to reports</a>
+                      </div>
+                    </div>
+                  </div>
+
 
 
 	</div>

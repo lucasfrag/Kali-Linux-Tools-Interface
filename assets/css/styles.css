@@ -1,6 +1,9 @@
+.card {
+	margin-bottom: 1.0em;
+}
+
 .zoom-effect {
 	-webkit-transition: 0.6s ease;
-	margin-bottom: 1.0em;
 }
 
 .zoom-effect:hover {
