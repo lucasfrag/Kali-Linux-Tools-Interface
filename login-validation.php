@@ -15,7 +15,7 @@
 		echo "<script> alert('Erro! Connecting via SSH to your host failed!'); window.location.href = 'login.php'</script>"; 
 
 	} else {
-		echo "<script> alert('Foi!'); window.location.href = 'login.php'</script>"; 
+		echo "<script>window.location.href = 'index.php'</script>"; 
 	}
 
 ?>
