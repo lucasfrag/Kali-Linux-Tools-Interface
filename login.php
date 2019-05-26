@@ -60,8 +60,8 @@
 }
 
 body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background-image: url('assets/img/background.jpg');
+  background-size: cover;
 }
 
 .card-signin {

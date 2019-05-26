@@ -187,7 +187,7 @@
 
   <!-- Header -->
   <!-- USE THIS DIV TO CHANGE THE BACKGROUND -->
-  <div class="header pb-8 pt-5 pt-md-8" style="background-image: url(<?php echo $background; ?>); background-size: cover;">
+  <div class="header pb-8 pt-5 pt-md-8" style="background-image: url(<?php echo $background; ?>); background-size: cover; background-position: bottom;">
     <div class="container-fluid">
       
     </div>
