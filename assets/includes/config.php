@@ -17,13 +17,11 @@
 	Example:
 	bg-gradient-primary
 
-	*/
-
  	// Kali Linux settings
 	$server = "localhost";	// Your Kali Linux IP Address
 	$user = "kali";		// User to connect
 	$password = "toor";			// Password
-
+*/
 
 	// Functions
 	function getConnectionDB() {
