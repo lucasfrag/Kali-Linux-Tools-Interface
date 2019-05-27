@@ -44,9 +44,6 @@ To get a local copy up and running follow these simple example steps.
 3. Edit the file `assets/includes/config.php` and set yours settings.
 4. Enjoy!
 
-### Heroku
-https://kali-linux-tools-interface.herokuapp.com/
-
 ### Built With
 * [Argon Dashboard](https://demos.creative-tim.com/argon-dashboard/)
 * [Bootstrap 4](https://getbootstrap.com)
