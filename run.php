@@ -1,4 +1,9 @@
 <?php
+	session_start();
+	$host = $_SESSION["host"];
+	$user = $_SESSION["user"];
+	$password = $_SESSION["password"];
+
 	// Set time limit to PHP(seconds)
 	set_time_limit(99999);
 
@@ -13,9 +18,9 @@
 	include('Net/SSH2.php');
 	include('assets/includes/config.php');
 
-	$ssh = new Net_SSH2($_SESSION["host"]);
+	$ssh = new Net_SSH2($host);
 	
-	if (!$ssh->login($_SESSION["user"], $_SESSION["password"]= $password)) {
+	if (!$ssh->login($user, $password)) {
 			echo 
 				"<div class='alert alert-danger alert-dismissible fade fade.in show' role='alert' style='position: fixed; z-index: 2; bottom: 0; right: 0; width: 40%;'>
  			   		<span class='alert-inner--icon'><i class='ni ni-fat-remove'></i></span>
