@@ -13,9 +13,9 @@
 	include('Net/SSH2.php');
 	include('assets/includes/config.php');
 
-	$ssh = new Net_SSH2($server);
+	$ssh = new Net_SSH2($_SESSION["host"]);
 	
-	if (!$ssh->login($user, $password)) {
+	if (!$ssh->login($_SESSION["user"], $_SESSION["password"]= $password)) {
 			echo 
 				"<div class='alert alert-danger alert-dismissible fade fade.in show' role='alert' style='position: fixed; z-index: 2; bottom: 0; right: 0; width: 40%;'>
  			   		<span class='alert-inner--icon'><i class='ni ni-fat-remove'></i></span>

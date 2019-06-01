@@ -3,11 +3,10 @@
 <head>
   <?php 
   	include("assets/includes/head.php"); 
+    session_start();
   ?>
 </head>
 <body>
-
-<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
 
 <body>
   <div class="container">

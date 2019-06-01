@@ -1,3 +1,7 @@
+<?php 
+    include("assets/includes/config.php");
+?>
+
 <!-- Sidenav -->
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
   <div class="container-fluid">
@@ -29,7 +33,7 @@
           </a>
 
           <div class="dropdown-divider"></div>
-          <a href="login.php" class="dropdown-item">
+          <a href="logout.php" class="dropdown-item">
             <i class="ni ni-user-run"></i>
             <span>Logout</span>
           </a>

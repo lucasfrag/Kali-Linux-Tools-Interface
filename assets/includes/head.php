@@ -23,7 +23,3 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 
-<?php
-    //include ("assets/includes/functions.php");
-    include ("assets/includes/config.php");
-?>
