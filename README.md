@@ -30,6 +30,7 @@ Kali Linux Tools Interface is a graphical interface to use information security 
 ### Prerequisites
 
 - A Debian-based distribution (preferably [Kali Linux](https://www.kali.org/))
+- The information security tools installed
 - Apache / Nginx service running
 - SSH Service running
 - Shell In A Box (if you want to use the Terminal)
