@@ -16,10 +16,6 @@
 		$name = $_SESSION["user"];
 		$avatar = "assets/img/profile.jpg";
 		$background = "assets/img/background.jpg";
-
-		$host = $_SESSION["host"];
-		$user = $_SESSION["user"];
-		$password = $_SESSION["password"];
 	}
 
 ?>

@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	session_destroy();
+
 	$host = $_POST["host"];
 	$user = $_POST["user"];
 	$password = $_POST["password"];
@@ -12,7 +13,8 @@
 	$ssh = new Net_SSH2($host);
 
 	if (!$ssh->login($user, $password)) {
-		echo "<script> alert('Erro! Connecting via SSH to your host failed!'); window.location.href = 'login.php'</script>"; 
+		echo "<script type='text/javascript'> alert('Erro! Connecting via SSH to your host failed!'); </script>";
+		echo "<script type='text/javascript'> window.location.href = 'login.php'; </script>"; 
 	} else {
 
 		$_SESSION["host"]= $host;
