@@ -2,7 +2,7 @@
 <p align="center">
   <img src="assets/img/logo.png" alt="Logo" width="80" height="80">
   <h3 align="center">Kali Linux Tools Interface</h3>
-  <p align="center">A graphical interface for using the Kali Linux tools through the browser.
+  <p align="center">A graphical interface to use information security tools by the browser.
     <br />
       <a href="https://medium.com/@ti.lucasfraga/documenta%C3%A7%C3%A3o-do-projeto-final-de-ads-f80a1117841f">
         <strong>
@@ -24,8 +24,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Kali Linux Tools Interface is a graphical interface to use information security tools by the browser. The project uses the Kali Linux tools as a reference because it is the distribution that has the largest package of native tools.
 
 
 ### Prerequisites
