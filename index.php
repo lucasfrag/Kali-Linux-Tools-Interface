@@ -29,7 +29,17 @@
                         <div class="row">
                           <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Available Tools</h5>
-                            <span class="h3 font-weight-bold mb-0">3 TOOLS</span>
+                            <span class="h3 font-weight-bold mb-0">
+
+                            	<?php
+                            		$con = getConnectionDB() or die ("Could not connect to database.");
+					                $sql = $con->prepare("SELECT * FROM tools WHERE released = 'Yes'");
+					                $sql->execute();
+
+                            		echo $sql->rowCount();
+                            	?>
+
+                             TOOLS</span>
                           </div>
                           <div class="col-auto">
                             <div class="icon icon-shape bg-default text-white rounded-circle shadow">
