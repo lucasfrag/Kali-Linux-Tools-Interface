@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 17-Maio-2019 às 11:11
+-- Generation Time: 03-Jun-2019 às 20:00
 -- Versão do servidor: 10.0.38-MariaDB-0ubuntu0.16.04.1
 -- PHP Version: 7.0.33-0ubuntu0.16.04.4
 
@@ -99,7 +99,15 @@ INSERT INTO `commands` (`id`, `name`, `description`, `examples`, `tool`, `type`,
 (84, 'Enable overview of received answers', NULL, NULL, 8, 'checkbox', '-o', NULL, NULL, NULL),
 (85, 'Enable negative cache', NULL, NULL, 8, 'checkbox', '-C', NULL, NULL, NULL),
 (86, 'Disable local caching', NULL, NULL, 8, 'checkbox', '-c', NULL, NULL, NULL),
-(87, 'Verify host name and search for virtual hosts', NULL, NULL, 3, 'checkbox', '-v', NULL, NULL, NULL);
+(87, 'Verify host name and search for virtual hosts', NULL, NULL, 3, 'checkbox', '-v', NULL, NULL, NULL),
+(88, 'Search', NULL, NULL, 15, 'input', 'search', 'To use this, clean target\'s field.', NULL, NULL),
+(90, 'Search emails with the local-part', NULL, NULL, 15, 'checkbox', '--local-part', NULL, NULL, NULL),
+(91, 'Search emails with the password', NULL, NULL, 15, 'checkbox', '--password', NULL, NULL, NULL),
+(92, 'Search emails with the domain', NULL, NULL, 15, 'checkbox', '--domain', NULL, NULL, NULL),
+(93, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(94, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(95, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(96, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -131,7 +139,7 @@ CREATE TABLE `tools` (
 INSERT INTO `tools` (`id`, `name`, `fullname`, `categories`, `description`, `site`, `github`, `released`, `avatar`, `cmd`, `target`, `resume`, `category`, `category2`) VALUES
 (1, 'Nmap', 'Nmap: the Network Mapper', 'information-gathering  vulnerability -analysis', 'https://tools.kali.org/information-gathering/nmap', 'https://insecure.org/', NULL, 'Yes', 'assets/img/nmap.jpg', 'nmap', NULL, 'Nmap (“Network Mapper”) is a free and open source (license) utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime.', 'Information Gathering', 'Vulnerability Analysis'),
 (2, 'BetterCap', 'bettercap', 'sniffing-spoofing', 'https://tools.kali.org/sniffingspoofing/bettercap', 'https://www.bettercap.org/', NULL, NULL, 'assets/img/bettercap.jpg', 'bettercap', NULL, NULL, 'Sniffing & Spoofing', NULL),
-(3, 'theHarvester', 'theHarvester', 'information- gathering', 'https://tools.kali.org/information-gathering/theharvester', NULL, 'https://github.com/laramies/theHarvester', 'Yes', NULL, 'python usr/lib/theHarvester/theHarvester.py', '-d', 'The objective of this program is to gather emails, subdomains, hosts, employee names, open ports and banners from different public sources like search engines, PGP key servers and SHODAN computer database.', 'Information Gathering', NULL),
+(3, 'theHarvester', 'theHarvester', 'information-gathering ', 'https://tools.kali.org/information-gathering/theharvester', NULL, 'https://github.com/laramies/theHarvester', 'Yes', NULL, 'python usr/lib/theHarvester/theHarvester.py', '-d', 'The objective of this program is to gather emails, subdomains, hosts, employee names, open ports and banners from different public sources like search engines, PGP key servers and SHODAN computer database.', 'Information Gathering', NULL),
 (4, 'Nikto', 'Nikto', 'information-gathering  web-applications', 'https://tools.kali.org/information-gathering/nikto', 'https://www.cirt.net/Nikto2', 'https://github.com/sullo/nikto', NULL, 'assets/img/nikto.png', 'nikto', '-h', NULL, 'Information Gathering', 'Web Applications'),
 (5, 'Aircrack-ng', 'Airckack-ng', 'wireless- attacks', 'https://tools.kali.org/wireless-attacks/aircrack-ng', 'https://www.aircrack-ng.org/doku.php?id=aircrack-ng', 'https://gitlab.com/kalilinux/packages/aircrack-ng', NULL, NULL, NULL, NULL, NULL, 'Wireless Attacks', NULL),
 (6, 'THC-Hydra', 'THC-Hydra', 'password-attacks', 'https://tools.kali.org/password-attacks/hydra', 'http://freeworld.thc.org/thc-hydra/', NULL, NULL, 'assets/img/hydrathc.jpg', NULL, NULL, NULL, 'Password Attacks', NULL),
@@ -140,7 +148,8 @@ INSERT INTO `tools` (`id`, `name`, `fullname`, `categories`, `description`, `sit
 (10, 'Sqlninja', 'Sqlninja', 'vulnerability-analysis  web-applications', 'https://tools.kali.org/vulnerability-analysis/sqlninja', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Vulnerability Analysis', 'Web Applications'),
 (11, 'Powerfuzzer', 'Powerfuzzer', 'vulnerability-analysis  web-applications', 'https://tools.kali.org/vulnerability-analysis/powerfuzzer', 'https://www.powerfuzzer.com/', NULL, NULL, NULL, NULL, NULL, NULL, 'Vulnerability Analysis', 'Web Applications'),
 (12, 'ProxyStrike', 'ProxyStrike', 'web-applications', 'https://tools.kali.org/web-applications/proxystrike', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Web Applications', NULL),
-(14, 'Dnsenum', 'Dnsenum', 'information-gathering', 'https://tools.kali.org/information-gathering/dnsenum', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Information Gathering', NULL);
+(14, 'Dnsenum', 'Dnsenum', 'information-gathering', 'https://tools.kali.org/information-gathering/dnsenum', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Information Gathering', NULL),
+(15, 'Karma', 'Karma', 'information-gathering', NULL, NULL, 'https://github.com/decoxviii/karma', 'Yes', 'assets/img/github.jpg', 'karma', 'target', 'Find leaked emails with your passwords.', 'Information Gathering', NULL);
 
 --
 -- Indexes for dumped tables
@@ -166,12 +175,12 @@ ALTER TABLE `tools`
 -- AUTO_INCREMENT for table `commands`
 --
 ALTER TABLE `commands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 --
 -- AUTO_INCREMENT for table `tools`
 --
 ALTER TABLE `tools`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
