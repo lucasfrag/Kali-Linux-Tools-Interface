@@ -23,7 +23,7 @@ Esse documento tem como objetivo apresentar e descrever o projeto <b>Kali Linux 
 
 # Artefatos do Projeto
 
-## [Project Model Canvas](project-model-canvas.md)
+## [MVP Canvas](mvp-canvas.md)
 ## [Sprint Backlog](sprint-backlog.md)
 ## [Mapa Mental](mapa-mental.md)
 ## [Representação da Arquitetura](arquitetura.md)
