@@ -41,7 +41,7 @@
 		}
 
 		$run = $command . " " . $cmd . " " . $target;
-		echo "<style='color: white'>The following command was executed: <b>" . $run . "</b>";
+		echo "<style='color: white'>The following command was executed: <b>" . $run . "</b><br><br>";
 		
 		$ssh->setTimeout(0);
 		

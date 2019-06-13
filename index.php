@@ -24,7 +24,7 @@
 
 
                   <div class="col-xl-6 col-lg-6">
-                    <div class="card card-stats">
+                    <div class="card card-stats zoom-effect">
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
@@ -58,7 +58,7 @@
 
 
                   <div class="col-xl-6 col-lg-6">
-                    <div class="card card-stats">
+                    <div class="card card-stats zoom-effect">
                       <div class="card-body">
                         <div class="row">
                           <div class="col">

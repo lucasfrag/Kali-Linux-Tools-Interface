@@ -25,7 +25,7 @@
       $avatar = $resultado['avatar'];
       $cmd = $resultado['cmd'];
       $target = $resultado['target'];
-      $resume = $resultado['resume']
+      $resume = $resultado['resume'];
   ?>
 
 	<!-- Page content -->
@@ -225,8 +225,24 @@
       <div class="col">  
         <div class="collapse terminal" id="terminal" >
           <div class="card card-body text-white bg-dark">
-            <h2 class="card-title text-white">Terminal</h2>
+            
+
+			<div class="row align-items-center">
+                <div class="col">
+                  <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Terminal</h2>
+                </div>
+                <div class="col text-right">
+                	<a href="#!" class="btn btn-sm btn-primary"><i class="ni ni-air-baloon text-yellow"></i> How to fix this?</a>
+                </div>
+          	</div>
+
+
             <p class="card-text" id="terminal-data"></p>
+
+            <div class="row align-items-center" style="justify-content: center;">
+	        	<a href="#!" class="btn btn-danger"><i class="ni ni-single-copy-04"></i> Save to reports</a>  	
+            </div>
+
           </div>
         </div>
       </div>

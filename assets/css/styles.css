@@ -2,6 +2,11 @@
 	margin-bottom: 1.0em;
 }
 
+.btn {
+
+    margin: 5px;
+}
+
 .zoom-effect {
 	-webkit-transition: 0.6s ease;
 }
