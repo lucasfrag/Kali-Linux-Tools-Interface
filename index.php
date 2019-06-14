@@ -33,8 +33,8 @@
 
                             	<?php
                             		$con = getConnectionDB() or die ("Could not connect to database.");
-					                $sql = $con->prepare("SELECT * FROM tools WHERE released = 'Yes'");
-					                $sql->execute();
+      					                $sql = $con->prepare("SELECT * FROM tools WHERE released = 'Yes'");
+      					                $sql->execute();
 
                             		echo $sql->rowCount();
                             	?>
