@@ -221,27 +221,75 @@
       </div>
     </div>
 
+
+  
+
     <div class="row mt-3">
       <div class="col">  
         <div class="collapse terminal" id="terminal" >
           <div class="card card-body text-white bg-dark">
             
+            <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Terminal</h2>
+			      <div class="row align-items-center">
+                
+                  
+                
 
-			<div class="row align-items-center">
-                <div class="col">
-                  <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Terminal</h2>
-                </div>
-                <div class="col text-right">
-                	<a href="#!" class="btn btn-sm btn-primary"><i class="ni ni-air-baloon text-yellow"></i> How to fix this?</a>
-                </div>
+                
+                  <div class="col-xl-6">
+                    <div class="card card-stats zoom-effect">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">How to fix this?</h5>
+                            <span class="h3 font-weight-bold mb-0"><br>We separate some tips exclusively for you.</span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                              <i class="ni ni-settings-gear-65"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="mt-3 mb-0 text-muted text-sm">
+                        </p>
+
+                    <a href="tools-list.php" class="btn btn-danger"><i class="ni ni-check-bold"></i> Let's fix this!</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6">
+                    <div class="card card-stats zoom-effect">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Save to reports</h5>
+                            <span class="h3 font-weight-bold mb-0">
+                              <input type="text" class="form-control form-control-alternative" name="report-name" placeholder="Choose a name to this report">
+                             </span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                              <i class="ni ni-single-copy-04"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="mt-3 mb-0 text-muted text-sm">
+                        </p>
+
+                    <a href="tools-list.php" class="btn btn-success"><i class="ni ni-single-copy-04"></i> Save to Reports</a>
+                      </div>
+                    </div>
+                  </div>
           	</div>
 
+            <center>
+              <hr style="background-color: white; width: 100px">  
+            </center>
+            
 
             <p class="card-text" id="terminal-data"></p>
 
-            <div class="row align-items-center" style="justify-content: center;">
-	        	<a href="#!" class="btn btn-danger"><i class="ni ni-single-copy-04"></i> Save to reports</a>  	
-            </div>
 
           </div>
         </div>
