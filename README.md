@@ -1,7 +1,11 @@
+<!-- TO DO PROJECT SHIELDS -->
+
+
 <!-- LOGO -->
 <p align="center">
   <img src="assets/img/logo.png" alt="Logo" width="80" height="80">
   <h3 align="center">Kali Linux Tools Interface</h3>
+  
   <p align="center">A graphical interface to use information security tools by the browser.
     <br />
       <a href="https://medium.com/@ti.lucasfraga/documenta%C3%A7%C3%A3o-do-projeto-final-de-ads-f80a1117841f">
@@ -44,13 +48,19 @@ Kali Linux Tools Interface is a graphical interface to use information security 
 3. Edit the file `assets/includes/config.php` and set yours settings.
 4. Enjoy!
 
-### Built With
+## Built With
 * [Argon Dashboard](https://demos.creative-tim.com/argon-dashboard/)
 * [Bootstrap 4](https://getbootstrap.com)
 * [PHP 7](https://php.net)
 * [PHP Secure Communications Library](https://github.com/phpseclib/phpseclib)
 * [JQuery](https://jquery.com)
 
+## Contributing
+Contributions are always welcome! 
+If you would like to contribute to the project, please use the Google Forms to send me your <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3GeoAqW05PDLmlyrCaeQu877HyRyzE8Sk0E5p9w2XWV1k0Q/viewform">Feedback</a>.
+
+## License
+Distributed under the MIT License. See LICENSE for more information.
 
 <!-- CONTACT -->
 ## Contact
