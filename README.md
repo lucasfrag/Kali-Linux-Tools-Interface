@@ -48,6 +48,20 @@ Kali Linux Tools Interface is a graphical interface to use information security 
 3. Edit the file `assets/includes/config.php` and set yours settings.
 4. Enjoy!
 
+## Screenshots
+
+### Dashboard
+<img src="https://cdn-images-1.medium.com/max/800/1*hdhVWcYHeTAJDNy-Rc6oCg.png" height=400>
+
+### Tools list
+<img src="https://cdn-images-1.medium.com/max/800/1*-GHokqJ0OJMjHGlVuZvEfg.png" height=400>
+
+### Choose and use!
+<img src="https://cdn-images-1.medium.com/max/800/1*aE4IUekZ9SRg8HUCoFXAUA.png" height=400>
+
+### More screenshots:
+Check the <a href="https://medium.com/@ti.lucasfraga/documenta%C3%A7%C3%A3o-do-projeto-final-de-ads-f80a1117841f">documentation</a> for more screenshots!
+
 ## Built With
 * [Argon Dashboard](https://demos.creative-tim.com/argon-dashboard/)
 * [Bootstrap 4](https://getbootstrap.com)
