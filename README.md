@@ -1,5 +1,5 @@
 <!-- TO DO PROJECT SHIELDS -->
-
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/lucasfrag/Kali-Linux-Tools-Interface.svg?style=flat-square"> <img alt="GitHub issues" src="https://img.shields.io/github/issues/lucasfrag/Kali-Linux-Tools-Interface.svg?style=flat-square"> <img alt="GitHub" src="https://img.shields.io/github/license/lucasfrag/Kali-Linux-Tools-Interface.svg?style=flat-square">
 
 <!-- LOGO -->
 <p align="center">
