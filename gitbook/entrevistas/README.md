@@ -1,4 +1,5 @@
 # Modelo de Entrevista
+As perguntas levantadas nas entrevistas englobam questões como <b>perfil</b> do entrevistado, funcionalidades, eficácia e eficiência.
 
 ## LEMBRETE!
 • Pedir permissão para gravar e/ou fazer anotações enquanto fala.
@@ -9,7 +10,7 @@ Formação:<br>
 Profissão:<br>
 Conhecimento na área de segurança cibernética:<br>
 
-## Perfil
+## Questionário
 
 <b>1.</b> Você já conhecia o Kali Linux ou outro sistema operacional voltado para a área de segurança?<br>
 <b>2.</b> Você utiliza ou já utilizou algum sistema operacional ou ferramenta para validar a segurança dos seus dados, redes, dispositivos, sistemas, etc?<br>
