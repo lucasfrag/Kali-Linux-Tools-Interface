@@ -19,11 +19,37 @@
 	            </div>
             	
             	<div class="card-body">
-							<?php
-								// $ssh = getConnectionSSH();
-								//echo $ssh->exec('');
-								
-							?>
+				<div class="col-xl-6 col-lg-6">
+                    <div class="card card-stats zoom-effect">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h5 class="card-title text-uppercase text-muted mb-0">Available Tools</h5>
+                            <span class="h3 font-weight-bold mb-0">
+
+                            	<?php
+                            		$con = getConnectionDB() or die ("Could not connect to database.");
+      					                $sql = $con->prepare("SELECT * FROM tools WHERE released = 'Yes'");
+      					                $sql->execute();
+
+                            		echo $sql->rowCount();
+                            	?>
+
+                             TOOLS</span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="icon icon-shape bg-default text-white rounded-circle shadow">
+                              <i class="ni ni-bullet-list-67"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="mt-3 mb-0 text-muted text-sm">
+                        </p>
+
+                    <a href="tools-list.php" class="btn btn-success">Show tools list</a>
+                      </div>
+                    </div>
+                  </div>
 					
 				</div>
 			</div>
