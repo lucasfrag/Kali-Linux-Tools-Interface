@@ -21,7 +21,7 @@
             	<div class="card-body">
             		<center><span>The interaction with the terminal is done by <b>Shell In A Box</b>. You must have it installed on the host to use it.</span><br><br></center>
 					<?php
-						echo "<iframe class='iframe-terminal' src='https://localhost:4200/'></iframe>";
+						echo "<iframe class='iframe-terminal' src='https://".$host = $_SESSION["host"].":4200/'></iframe>";
 					?>
 					
 				</div>
