@@ -75,7 +75,7 @@
                           <div class='col'>
                             <h5 class='card-title text-uppercase text-muted mb-0'>Save to reports</h5>
                             <span class='h3 font-weight-bold mb-0'>
-                              <input id='report-name' type='text' class='form-control form-control-alternative' name='report-name' placeholder='Choose a name to this report'>
+                              <input id='report-name' type='text' class='form-control form-control-alternative' name='report-name' required placeholder='Choose a name to this report'>
                              </span>
                           </div>
                           <div class='col-auto'>
