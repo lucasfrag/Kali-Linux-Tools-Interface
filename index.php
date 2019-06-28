@@ -63,7 +63,17 @@
                         <div class="row">
                           <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Reports</h5>
-                            <span class="h3 font-weight-bold mb-0">0 REPORTS</span>
+                            <span class="h3 font-weight-bold mb-0">
+                              <?php
+                                $con = getConnectionDB() or die ("Could not connect to database.");
+                                $sql = $con->prepare("SELECT * FROM reports");
+                                $sql->execute();
+
+                                echo $sql->rowCount();
+                              ?>
+
+
+                            REPORTS</span>
                           </div>
                           <div class="col-auto">
                             <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
