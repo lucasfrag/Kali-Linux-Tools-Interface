@@ -23,12 +23,13 @@
 
               <?php
                 $con = getConnectionDB() or die ("Could not connect to database.");
-                $sql = $con->prepare("SELECT name, tools, command, output, solution, dataHour FROM reports ORDER BY dataHour DESC;");
+                $sql = $con->prepare("SELECT id, name, tools, dataHour FROM reports ORDER BY dataHour DESC;");
                 $sql->execute();
 
                 $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
                 // FOREACH BEGINS
                 foreach ($resultados as $resultado) {
+                  $id = $resultado['id'];
                   $name = $resultado['name'];
                   $tools = $resultado['tools'];
                   $command = $resultado['command'];
@@ -51,18 +52,20 @@
                              <br><p><b>Datetime:</b> <?php echo $dataHour; ?>hrs</p>
                           </div>
                           <div class="col-auto">
-                            <div class="icon icon-shape text-white rounded-circle shadow" style="background-image: url('<?php echo $avatar2; ?>');">
+                            <div class="icon icon-shape text-white rounded-circle shadow" style="background-image: url('assets/img/logo.png'); background-size: cover;">
                             </div>
                           </div>
                         </div>
                         <p class="mt-3 mb-0 text-muted text-sm">
                         </p>
 
-                    <a href="tools-list.php" class="btn btn-info">+ Show details</a>
+                        <?php echo "<a href='selected-report.php?id=$id' style='text-decoration: none;' class='btn btn-info'>+ Show details</a>" ?>
                       </div>
                     </div>
                   </div>
+
 					<?php }           ?>
+
 				</div>
 
 <nav aria-label="Page navigation example">
