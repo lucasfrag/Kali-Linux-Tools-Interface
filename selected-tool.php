@@ -229,64 +229,7 @@
         <div class="collapse terminal" id="terminal" >
           <div class="card card-body text-white bg-dark">
             
-            <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Terminal</h2>
-			      <div class="row align-items-center">
-                
-                  
-                
-
-                
-                  <div class="col-xl-6">
-                    <div class="card card-stats zoom-effect">
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <h5 class="card-title text-uppercase text-muted mb-0">How to fix this?</h5>
-                            <span class="h3 font-weight-bold mb-0"><br>We separate some tips exclusively for you.</span>
-                          </div>
-                          <div class="col-auto">
-                            <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                              <i class="ni ni-settings-gear-65"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="mt-3 mb-0 text-muted text-sm">
-                        </p>
-
-                    <a href="tools-list.php" class="btn btn-danger"><i class="ni ni-check-bold"></i> Let's fix this!</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-6">
-                    <div class="card card-stats zoom-effect">
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <h5 class="card-title text-uppercase text-muted mb-0">Save to reports</h5>
-                            <span class="h3 font-weight-bold mb-0">
-                              <input type="text" class="form-control form-control-alternative" name="report-name" placeholder="Choose a name to this report">
-                             </span>
-                          </div>
-                          <div class="col-auto">
-                            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                              <i class="ni ni-single-copy-04"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="mt-3 mb-0 text-muted text-sm">
-                        </p>
-
-                    <a href="tools-list.php" class="btn btn-success"><i class="ni ni-single-copy-04"></i> Save to Reports</a>
-                      </div>
-                    </div>
-                  </div>
-          	</div>
-
-            <center>
-              <hr style="background-color: white; width: 100px">  
-            </center>
-            
+            <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Terminal</h2>            
 
             <p class="card-text" id="terminal-data"></p>
 
@@ -305,6 +248,28 @@
 
   <script type="text/javascript">
     var command = '<?php echo $cmd; ?>';
+
+
+
+    function save() {
+      var output_data = document.getElementById('test').value;
+      var command_executed = document.getElementById('command-executed').value;
+      var report_name = document.getElementById('report-name').value;
+      var tool_selected = '<?php echo $fullname; ?>';
+
+      $.post("save-reports.php", {
+        "output_data" : output_data, 
+        "command_executed" : command_executed, 
+        "report_name" : report_name,
+        "tool_selected" : tool_selected
+      }).done(function (data) {
+        document.getElementById("reports-card").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
+      }).fail(function (error) {
+          document.getElementById("reports-card").innerHTML = error;
+      });
+
+    }
+
 
     function execute() {
         $(".btn-default").click(function()  {
