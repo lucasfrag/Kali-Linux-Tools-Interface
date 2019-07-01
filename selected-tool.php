@@ -26,7 +26,7 @@
       $cmd = $resultado['cmd'];
       $target = $resultado['target'];
       $resume = $resultado['resume'];
-      $solution = $resultado['solution'];
+      $solution = $resultado["solution"];
   ?>
 
 	<!-- Page content -->
@@ -265,33 +265,10 @@
     var command = '<?php echo $cmd; ?>';
 
 
-
-    function save() {
-      var output_data = document.getElementById('test').value;
-      var command_executed = document.getElementById('command-executed').value;
-      var report_name = document.getElementById('report-name').value;
-      var tool_selected = '<?php echo $fullname; ?>';
-      var solution = '<?php echo $solution; ?>';
-
-      $.post("save-reports.php", {
-        "output_data" : output_data, 
-        "command_executed" : command_executed, 
-        "report_name" : report_name,
-        "tool_selected" : tool_selected,
-        "solution" : solution
-      }).done(function (data) {
-        document.getElementById("reports-card").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
-      }).fail(function (error) {
-          document.getElementById("reports-card").innerHTML = error;
-      });
-
-    }
-
-
     function execute() {
         $(".btn-default").click(function()  {
-          $(".options").collapse('hide');
-          $(".terminal").collapse('show');
+          $(".options").collapse("hide");
+          $(".terminal").collapse("show");
         });
 
         document.getElementById("terminal-data").innerHTML = "Loading...";
@@ -335,8 +312,31 @@
         }).fail(function (error) {
             document.getElementById("terminal-data").innerHTML = error;
         });
-    }
+    };
 
+  </script>
+
+  <script type="text/javascript">
+    function save() {
+      var output_data = document.getElementById("test").value;
+      var command_executed = document.getElementById("command-executed").value;
+      var report_name = document.getElementById("report-name").value;
+      var tool_selected = "<?php echo $fullname; ?>";
+      var solution = "<?php echo $solution; ?>";
+
+      $.post("save-reports.php", {
+        "output_data" : output_data, 
+        "command_executed" : command_executed, 
+        "report_name" : report_name,
+        "tool_selected" : tool_selected,
+        "solution" : solution
+      }).done(function (data) {
+        document.getElementById("reports-card").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
+      }).fail(function (error) {
+          document.getElementById("reports-card").innerHTML = error;
+      });
+
+    }
   </script>
 
 </body>
