@@ -60,6 +60,8 @@
                         </p>
 
                         <?php echo "<a href='selected-report.php?id=$id' style='text-decoration: none;' class='btn btn-info'>+ Show details</a>" ?>
+
+                        <?php echo "<a href='delete-reports.php?id=$id' style='text-decoration: none;' class='btn btn-danger'>Delete</a>" ?>
                       </div>
                     </div>
                   </div>
