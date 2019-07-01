@@ -11,7 +11,7 @@
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("SELECT fullname, category, category2, description, site, github, avatar, cmd, target, resume  FROM tools WHERE id=$tool;");
+    $sql = $con->prepare("SELECT *  FROM tools WHERE id=$tool;");
     $sql->execute();
     $resultados = $sql->fetchAll(PDO::FETCH_ASSOC);
     // FOREACH BEGINS
@@ -26,6 +26,7 @@
       $cmd = $resultado['cmd'];
       $target = $resultado['target'];
       $resume = $resultado['resume'];
+      $solution = $resultado['solution'];
   ?>
 
 	<!-- Page content -->
@@ -222,7 +223,20 @@
     </div>
 
 
-  
+    <div class="row mt-3">
+      <div class="col">  
+        <div class="collapse solution" id="solution" >
+          <div class="card card-body text-white bg-success">
+            
+            <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Solution</h2>            
+
+            <p class="card-text"><?php echo $solution; ?></p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="row mt-3">
       <div class="col">  
@@ -238,6 +252,7 @@
         </div>
       </div>
     </div>
+
 
 	<?php
   // FOREACH ENDS
@@ -256,12 +271,14 @@
       var command_executed = document.getElementById('command-executed').value;
       var report_name = document.getElementById('report-name').value;
       var tool_selected = '<?php echo $fullname; ?>';
+      var solution = '<?php echo $solution; ?>';
 
       $.post("save-reports.php", {
         "output_data" : output_data, 
         "command_executed" : command_executed, 
         "report_name" : report_name,
-        "tool_selected" : tool_selected
+        "tool_selected" : tool_selected,
+        "solution" : solution
       }).done(function (data) {
         document.getElementById("reports-card").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
       }).fail(function (error) {

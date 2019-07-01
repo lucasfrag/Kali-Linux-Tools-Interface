@@ -3,13 +3,14 @@
   $command_executed = $_POST["command_executed"];
   $report_name = $_POST["report_name"];
   $output_data = $_POST["output_data"];
+  $solution = $_POST["solution"];
 
   include('assets/includes/config.php');
     $con = getConnectionDB() or die ("Could not connect to database.");
-    $sql = $con->prepare("INSERT INTO reports (name, command, tools, output, dataHour) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)");
+    $sql = $con->prepare("INSERT INTO reports (name, command, tools, output, solution, dataHour) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)");
 
 
-    if ($sql->execute(array ($tool, $command_executed, $report_name, $output_data))){
+    if ($sql->execute(array ($tool, $command_executed, $report_name, $output_data, $solution))){
 		  echo
 "
                   <div class='card card-stats zoom-effect'>

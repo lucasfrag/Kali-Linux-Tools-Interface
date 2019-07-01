@@ -63,7 +63,7 @@
                         <p class='mt-3 mb-0 text-muted text-sm'>
                         </p>
 
-                    <a href='tools-list.php' class='btn btn-danger'><i class='ni ni-check-bold'></i> Let's fix this!</a>
+                    <a href='#solution' data-toggle='collapse' class='btn btn-danger'><i class='ni ni-check-bold'></i> Let's fix this!</a>
                       </div>
                     </div>
                   </div>
