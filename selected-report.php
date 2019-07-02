@@ -49,15 +49,36 @@
               </span>
 
               <br>
-              <h2>Terminal Output</h2>
-              <p>
-                <pre><?php echo $output; ?></pre>
-              </p>
 
-              <h2>Solution</h2>
-               <p>
-                <?php echo $solution; ?>
-              </p>
+              <div class="row mt-3">
+                <div class="col">  
+                  <div class="terminal" id="terminal" >
+                    <div class="card card-body text-white bg-dark">
+                      
+                      <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Terminal</h2>            
+
+                      <p class="card-text"><pre class="text-white"><?php echo $output; ?></pre></p>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col">  
+                  <div class="solution" id="solution" >
+                    <div class="card card-body text-white bg-success">
+                      
+                      <h2 class="card-title text-white"><i class="ni ni-bold-right"></i> Solution</h2>            
+
+                      <p class="card-text"><?php echo $solution; ?></p>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             </div>
 
