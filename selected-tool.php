@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <?php 
-  	include("assets/includes/head.php"); 
+    include("assets/includes/head.php"); 
     $tool = $_GET['id'];
   ?>
 <body>
-	<?php
-		include("assets/includes/header.php");
-	?>
+  <?php
+    include("assets/includes/header.php");
+  ?>
 
   <?php
     $con = getConnectionDB() or die ("Could not connect to database.");
@@ -29,22 +29,22 @@
       $solution = $resultado["solution"];
   ?>
 
-	<!-- Page content -->
+  <!-- Page content -->
     <div class="container-fluid mt--7">
       <!-- Table -->
       <div class="row">
-      	<div class="col-xl-12 order-xl-2 mb-5 mb-xl-0">
+        <div class="col-xl-12 order-xl-2 mb-5 mb-xl-0">
           <div class="card card-profile shadow">
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
-                	<?php 
-                		if ($avatar) {
-                			echo "<img src='$avatar' class='rounded-circle'>";
-                		} else {
-                			echo "<img src='assets/img/kali.png' class='rounded-circle'>";
-                		}
-                	?>
+                  <?php 
+                    if ($avatar) {
+                      echo "<img src='$avatar' class='rounded-circle'>";
+                    } else {
+                      echo "<img src='assets/img/kali.png' class='rounded-circle'>";
+                    }
+                  ?>
 
                     
                 </div>
@@ -127,22 +127,22 @@
                 <div>
                   <i class="ni education_hat mr-2"></i>
                   <?php 
-                  	echo $category;
-					if (!is_null($category2)) {
-						echo ", $category2";
-					}
+                    echo $category;
+          if (!is_null($category2)) {
+            echo ", $category2";
+          }
                   ?> 
-												    		                  
+                                                  
                 </div>
                 <hr class="my-4" />
                 <form>
                 <div class="col-sm-12 offset-md-3 col-md-6">
 
-                		<p>Enter the target's address: </p>
+                    <p>Enter the target's address: </p>
 
-                	 	<div class="form-group">
-				        	<input id='target' type="text" placeholder="Example: 127.0.0.1" class="form-control is-valid" onchange="getTarget();" />
-				      	</div>
+                    <div class="form-group">
+                  <input id='target' type="text" placeholder="Example: 127.0.0.1" class="form-control is-valid" onchange="getTarget();" />
+                </div>
                 </div>
                 
                 <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#options"> + Options</button>
@@ -150,22 +150,20 @@
                 <br><br>
 
                 <div class="collapse options" id="options">
-        				  <h6 class="heading-small text-muted mb-4">Inputs</h6>
+                  <h6 class="heading-small text-muted mb-4">Inputs</h6>
 
                   <!-- INPUTS LIST COMMANDS -->
-      				  	<div class="col-xl-12">
+                  <div class="col-xl-12">
                     <div class="row">
                         <?php
                           $sql2 = $con->prepare("SELECT name, example, command FROM commands WHERE tool=$tool AND type='input' ORDER BY name");
                           $sql2->execute();
                           $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
-
                           // FOREACH BEGINS
                           foreach ($resultados2 as $resultado2) {
                             $name = $resultado2['name'];
                             $example = $resultado2['example'];
                             $command = $resultado2['command'];
-
                             echo "
                               <div class='col-md-12 col-lg-6 col-xl-4'>
                                 <div class='form-group'>
@@ -187,13 +185,11 @@
                           $sql2 = $con->prepare("SELECT id, name, command FROM commands WHERE tool=$tool AND type='checkbox' ORDER BY name");
                           $sql2->execute();
                           $resultados2 = $sql2->fetchAll(PDO::FETCH_ASSOC);
-
                           // FOREACH BEGINS
                           foreach ($resultados2 as $resultado2) {
                             $id = $resultado2['id'];
                             $name = $resultado2['name'];
                             $command = $resultado2['command'];
-
                             echo "
                             <div class='col-lg-12 col-xl-6'>
                                 <div class='row'>
@@ -210,7 +206,7 @@
                         ?>
                           <br><br><br>
                       </div>
-                  	</div>
+                    </div>
                 </div>
       </form>
 
@@ -254,36 +250,47 @@
     </div>
 
 
-	<?php
+  <?php
   // FOREACH ENDS
     }
-
-		include("assets/includes/footer.php")
-	?>
+    include("assets/includes/footer.php")
+  ?>
 
   <script type="text/javascript">
+    function save() {
+      var output_data = document.getElementById("test").value;
+      var command_executed = document.getElementById("command-executed").value;
+      var report_name = document.getElementById("report-name").value;
+      var tool_selected = "<?php echo $fullname; ?>";
+      
+      $.post("save-reports.php", {
+        "output_data" : output_data, 
+        "command_executed" : command_executed, 
+        "report_name" : report_name,
+        "tool_selected" : tool_selected
+      }).done(function (data) {
+        document.getElementById("reports-card").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
+      }).fail(function (error) {
+          document.getElementById("reports-card").innerHTML = error;
+      });
+    }
+
+
     var command = '<?php echo $cmd; ?>';
-
-
     function execute() {
         $(".btn-default").click(function()  {
           $(".options").collapse("hide");
           $(".terminal").collapse("show");
         });
-
         document.getElementById("terminal-data").innerHTML = "Loading...";
-
         /* GET target */
         var target = document.getElementById('target').value;
-
         if (target) {
-	        /* Verify if have target command */
-	        if ('<?php echo $target; ?>') {
-	        	target = '<?php echo $target; ?>' + " " + target;
-	        }        	
+          /* Verify if have target command */
+          if ('<?php echo $target; ?>') {
+            target = '<?php echo $target; ?>' + " " + target;
+          }         
         }
-
-
         /* Inputs verification */
         var arrayInputs = [];
         var inputs = document.querySelectorAll("input[id=input-data]");
@@ -298,10 +305,9 @@
         var checkbox = document.querySelectorAll("input[id=checkbox-data]");
         for (var index = 0; index < checkbox.length; ++index) {
             if (checkbox[index].checked) {
-              	arrayCheckbox.push(checkbox[index].name);           
+                arrayCheckbox.push(checkbox[index].name);           
             }
         }
-
         $.post("run.php", {
           "command" : command, 
           "target" : target, 
@@ -313,30 +319,6 @@
             document.getElementById("terminal-data").innerHTML = error;
         });
     };
-
-  </script>
-
-  <script type="text/javascript">
-    function save() {
-      var output_data = document.getElementById("test").value;
-      var command_executed = document.getElementById("command-executed").value;
-      var report_name = document.getElementById("report-name").value;
-      var tool_selected = "<?php echo $fullname; ?>";
-      var solution = "<?php echo $solution; ?>";
-
-      $.post("save-reports.php", {
-        "output_data" : output_data, 
-        "command_executed" : command_executed, 
-        "report_name" : report_name,
-        "tool_selected" : tool_selected,
-        "solution" : solution
-      }).done(function (data) {
-        document.getElementById("reports-card").innerHTML = data; //Pega a resposta da pagina_que_ira_receber_o_post.php
-      }).fail(function (error) {
-          document.getElementById("reports-card").innerHTML = error;
-      });
-
-    }
   </script>
 
 </body>
